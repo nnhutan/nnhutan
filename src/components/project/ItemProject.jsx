@@ -36,7 +36,7 @@ const ItemProject = ({ name, org, role, time, source, demo, features, technologi
             <span>Source code:</span>
           </span>
           {
-            source.includes('http') ? <a className="content col-10 text-decoration-none text-info" role="button">{source}</a> : <span className="content col-10">{source}</span>
+            source.includes('http') ? <a className="content col-10 text-decoration-none text-info" role="button" target="_blank" rel="noopener noreferrer">{source}</a> : <span className="content col-10">{source}</span>
           }
         </span>
 
@@ -46,7 +46,7 @@ const ItemProject = ({ name, org, role, time, source, demo, features, technologi
             <span>Demo:</span>
           </span>
           {
-            demo.includes('http') ? <a className="content col-10 text-decoration-none text-info" role="button">{demo}</a> : <span className="content col-10">{demo}</span>
+            demo.includes('http') ? <a className="content col-10 text-decoration-none text-info" role="button" target="_blank" rel="noopener noreferrer">{demo}</a> : <span className="content col-10">{demo}</span>
           }
         </span>
       </div>
