@@ -3,11 +3,11 @@ const ItemProject = ({ name, org, role, time, source, demo, features, technologi
   return (
     <div className="item-project mb-3">
       <div className="top">
-        <div className="title d-flex flex-lg-row flex-column align-items-start align-items-lg-center">
+        <div className="title d-flex flex-lg-row flex-column align-items-start align-items-lg-center justify-content-lg-between">
           <span className="name fs-5">{name}</span>
           <span className="org">{org}</span>
         </div>
-        <div className="title d-flex flex-lg-row flex-column align-items-start align-items-lg-center">
+        <div className="title d-flex flex-lg-row flex-column align-items-start align-items-lg-center justify-content-lg-between">
           <span className="role">{role}</span>
           <span className="time">{time}</span>
         </div>
