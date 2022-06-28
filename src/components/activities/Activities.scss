@@ -1,0 +1,40 @@
+.activities{
+  .item-activity{
+    position:  relative;
+    margin-bottom: 16px;
+
+    .top{
+      &:before{
+        content: "";
+        position: absolute;
+        top: 24px;
+        left: -12px;
+        background-color: green;
+        width: 4px;
+        height: 70%;
+        border-radius: 4px;
+      }
+
+      &:after{
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: -13px;
+        background-color: red;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+      }
+
+      .event{
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+
+    .time, .content{
+      font-weight: 400;
+      color: #666
+    }
+  }
+}
