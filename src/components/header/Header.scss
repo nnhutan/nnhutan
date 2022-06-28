@@ -1,0 +1,33 @@
+.header{
+  width: 100%;
+  height: 300px;
+  background-color: #974545;
+  padding: 24px 0;
+
+  .middle-info{
+    
+
+    .fullname{
+     color: #fff;
+     font-weight: 600;
+     letter-spacing: 2px;
+    }
+
+    .avatar{
+      img{
+        width: 200px;
+        height: 200px;
+        border-radius: 200px;
+      }
+    }
+  }
+
+  .info-item{
+    margin-top: 16px;
+    
+    .content{
+      color: #fff;
+      margin-left: 8px;
+    }
+  }
+}

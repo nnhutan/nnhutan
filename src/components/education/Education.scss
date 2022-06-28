@@ -1,0 +1,58 @@
+.education{
+.item-education{
+  position: relative;
+  margin-bottom: 16px;
+
+  .top{
+    &:before{
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: -12px;
+      background-color: green;
+      width: 4px;
+      height: 70%;
+      border-radius: 4px;
+    }
+
+    &:after{
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -13px;
+      background-color: red;
+      width: 6px;
+      height: 6px;
+      border-radius: 6px;
+    }
+  }
+
+  .university{
+    font-size: 20px;
+    font-weight: 500;
+    color: #212529
+  }
+
+  .time{
+    font-weight: 400;
+    color: #666;
+  }
+
+  .item{
+    color: #666;
+    font-weight: 400;
+  }
+
+  .major{
+    font-weight: 500;
+  }
+
+  .courses{
+    font-weight: 400;
+
+    .detail{
+      color: #666
+    }
+  }
+}
+}
