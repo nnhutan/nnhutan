@@ -23,7 +23,7 @@ const Education = () => {
   return (
     <div className="education">
       <TitleBody icon="bi bi-mortarboard-fill" title="Education" />
-      <div className="list ps-5">
+      <div className="list ps-lg-5 ps-2">
         {
           Data.map((item, index) => <ItemEducation {...item} key={index} />)
         }

@@ -1,5 +1,5 @@
 
-const InfoItem = ({ icon, content, type }) => {
+const InfoItem = ({ icon, content, type, isRight }) => {
 
   const openLink = () => {
     if (!type) return;
@@ -10,8 +10,8 @@ const InfoItem = ({ icon, content, type }) => {
 
 
   return (
-    <div className="info-item" onClick={openLink} role={type ? "button" : ""} >
-      <span className="icon">
+    <div className="info-item d-flex align-item-center" onClick={openLink} role={type ? "button" : ""} >
+      <span className={isRight ? "icon order-md-2 ms-md-2 me-2" : "icon me-2"}>
         <i className={icon}></i>
       </span>
       <span className="content">{content}</span>
