@@ -79,7 +79,7 @@ const Project = () => {
   return (
     <div className="project mt-4">
       <TitleBody icon="bi bi-briefcase-fill" title="Projects" />
-      <div className="list ps-5">
+      <div className="list ps-2 ps-lg-5">
         {
           Data.map((item, index) => <ItemProject {...item} key={index} />)
         }

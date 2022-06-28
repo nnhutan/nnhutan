@@ -19,7 +19,7 @@ const Activities = () => {
   return (
     <div className="activities mt-4">
       <TitleBody icon="bi bi-image-alt" title="Activities" />
-      <div className="list ps-5">
+      <div className="list ps-2 ps-lg-5">
         {
           Data.map((item, index) => <ItemActivity {...item} key={index} />)
         }
