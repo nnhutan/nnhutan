@@ -51,7 +51,7 @@ const Data = [
     features: "Create, add, edit and delete notes",
     technologies: "Moqups, Bootstrap, React.js, Node.js, Express.js, MongoDB",
     source: "https://github.com/bungio20k/hcmut-note.git",
-    demo: "Not available"
+    demo: "https://hcmut-note.herokuapp.com/"
   },
   {
     name: "The Bell Store",
