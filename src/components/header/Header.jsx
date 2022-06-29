@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container h-100">
-        <div className="row">
+        <div className="row g-0">
           <div className="col-xl-3 left-info d-flex flex-column justify-content-end order-2 order-xl-1 col-md-6 ps-lg-0 ps-4">
             {
               Data.LeftInfo.map((item, index) => <InfoItem {...item} key={index} />)
