@@ -1,11 +1,11 @@
 <h1 align="center">Hi 👋, I'm Tan</h1>
 <h3 align="center">I'm a student at Ho Chi Minh city university of technology. My major is software engineering - computer science.</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=nnhutan&label=Profile%20views&color=0e75b6&style=flat" alt="nnhutan" /> </p>
+<!-- <p align="left"> <img src="https://komarev.com/ghpvc/?username=nnhutan&label=Profile%20views&color=0e75b6&style=flat" alt="nnhutan" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=nnhutan" alt="nnhutan" /></a> </p>
 
-<p align="left"> <a href="https://twitter.com/nnhutan" target="blank"><img src="https://img.shields.io/twitter/follow/nnhutan?logo=twitter&style=for-the-badge" alt="nnhutan" /></a> </p>
+<p align="left"> <a href="https://twitter.com/nnhutan" target="blank"><img src="https://img.shields.io/twitter/follow/nnhutan?logo=twitter&style=for-the-badge" alt="nnhutan" /></a> </p> -->
 
 - 🔭 I’m currently working on **Lixibox**
 
