@@ -4,6 +4,16 @@ import './Project.scss'
 
 const Data = [
   {
+    name: "Debts Manager",
+    org: "Personal project",
+    role: "Web app",
+    time: "July 2022",
+    features: "Manger your debtors and debts. This app is very helpful for students, people who live together",
+    technologies: "Ruby on Rails, Bootstrap, AWS, Caspitrano",
+    source: "https://github.com/nnhutan/debt-manager.git",
+    demo: "http://debtsmanager.software/"
+  },
+  {
     name: "Social crawler",
     org: "Lixibox's external service",
     role: "Web app",
