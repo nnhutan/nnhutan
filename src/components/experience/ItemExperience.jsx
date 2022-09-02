@@ -2,14 +2,9 @@ const ItemExperience = ({ company, time, position }) => {
   return (
     <div className="item-experience">
       <div className="top d-lg-flex align-items-center justify-content-between">
-        <a
-          href="#"
-          className="university btn btn-link text-decoration-none text-start p-0"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <span className="university btn btn-link text-decoration-none text-start p-0">
           {company}
-        </a>
+        </span>
         <span className="time">{time}</span>
       </div>
       <span className="">
