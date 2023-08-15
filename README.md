@@ -8,7 +8,7 @@
 <p align="left"> <a href="https://twitter.com/nnhutan" target="blank"><img src="https://img.shields.io/twitter/follow/nnhutan?logo=twitter&style=for-the-badge" alt="nnhutan" /></a> </p> -->
 
 - 👨‍💻 All of my projects are available at
-  [https://dinhnhutan.me/](https://dinhnhutan.me/)
+  [https://dinhnhutan.me/](https://dinhnhutan.info/)
 
 - 📫 How to reach me **nhutan2001@gmail.com**
 
