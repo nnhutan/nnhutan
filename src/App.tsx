@@ -19,33 +19,29 @@ function App() {
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const target = window.location.href.split("#")[1];
+    setTimeout(() => {
+      const target = window.location.href.split("#")[1];
 
-    switch (target) {
-      case undefined:
-        inforRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "home":
-        inforRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "about":
-        aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "projects":
-        projectRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "skills":
-        skillRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "experiences":
-        experienceRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "more":
-        moreRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      default:
-        break;
-    }
+      switch (target) {
+        case "about":
+          aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        case "projects":
+          projectRef.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        case "skills":
+          skillRef.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        case "experiences":
+          experienceRef.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        case "more":
+          moreRef.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        default:
+          break;
+      }
+    }, 500);
   }, []);
 
   const handleScroll = (item: string) => {
