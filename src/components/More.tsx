@@ -23,12 +23,12 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
       paddingBottom={8}
     >
       <Typography
-        variant="h2"
+        variant="h3"
         align="center"
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        More about me
+        More...
       </Typography>
       <Typography
         align="center"
@@ -39,7 +39,14 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
         I'll show you some of my hobbies, my favorite things, my stories here.
       </Typography>
       <Box sx={{ width: "100%", maxHeight: "60vh", overflowY: "scroll" }}>
-        <Masonry columns={3} spacing={2}>
+        <Masonry
+          columns={{
+            xs: 1,
+            sm: 2,
+            md: 3,
+          }}
+          spacing={2}
+        >
           {itemData.map((item, _) => (
             item &&
             (

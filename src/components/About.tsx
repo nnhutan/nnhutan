@@ -29,7 +29,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
       paddingBottom={8}
     >
       <Typography
-        variant="h2"
+        variant="h3"
         align="center"
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
@@ -40,7 +40,8 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
         <CardContent>
           <Grid container spacing={2} alignItems="center">
             <Grid
-              xs={6}
+              xs={12}
+              md={6}
               alignItems="center"
               display="flex"
               flexDirection="column"
@@ -49,12 +50,18 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
               <Avatar
                 alt="avatar"
                 src={ImageAvt}
-                sx={{ width: 375, height: 375, border: "2px solid #f1f3f5" }}
+                sx={{
+                  aspectRatio: "1/1",
+                  width: "clamp(200px, 30vw, 300px)",
+                  height: "auto",
+                  border: "2px solid #f1f3f5",
+                }}
               />
               <Stack
-                spacing={2}
-                direction="row"
+                spacing={{ xs: 0.5, md: 2 }}
+                direction={{ xs: "column", md: "row" }}
                 divider={<Divider orientation="vertical" flexItem />}
+                justifyContent="center"
               >
                 <Box display="flex" alignItems="center" gap={2}>
                   <House />
@@ -66,7 +73,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 </Box>
               </Stack>
             </Grid>
-            <Grid xs={6}>
+            <Grid xs={12} md={6}>
               <Typography
                 variant="body1"
                 fontSize={20}

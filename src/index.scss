@@ -26,8 +26,8 @@ body {
       rgb(236, 240, 241)
     )
     0% 0% / 1200% 1200%;
-  animation: BackgroundAnimation 70s ease infinite;
-  -webkit-animation: BackgroundAnimation 70s ease infinite;
+  // animation: BackgroundAnimation 70s ease infinite;
+  // -webkit-animation: BackgroundAnimation 70s ease infinite;
   background-size: 1200% 1200%;
   -webkit-background-size: 1200% 1200%;
   min-height: 100vh;
@@ -36,8 +36,3 @@ body {
 .min-vh-100 {
   min-height: 100vh !important;
 }
-
-/* code { */
-/*   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", */
-/*     monospace; */
-/* } */

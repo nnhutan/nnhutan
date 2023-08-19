@@ -1,7 +1,7 @@
 import { Box, Pagination, Skeleton, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useEffect, useState } from "react";
-import { Repos, useGetReposQuery } from "../api/reposApi";
+import { Repos, useGetOrgReposQuery, useGetReposQuery } from "../api/reposApi";
 import ReposCard from "./ReposCard";
 import { forwardRef } from "react";
 
@@ -12,19 +12,30 @@ const perPage = 4;
 
 const Project = forwardRef<HTMLDivElement, ProjectProps>((_, ref) => {
   const { data, isLoading } = useGetReposQuery(undefined);
+  const { data: orgRepos, isLoading: isLoadingOrgRepos } = useGetOrgReposQuery(
+    undefined,
+  );
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [displayData, setDisplayData] = useState<Repos[]>([]);
+  const [totalData, setTotalData] = useState<Repos[]>([]);
 
   useEffect(() => {
-    if (data) {
+    if (data && orgRepos) {
+      const totalData = [...data, ...orgRepos].sort(
+        (a, b) =>
+          new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime(),
+      );
+
       const start = (page - 1) * perPage;
       const end = page * perPage;
-      setTotalPage(Math.ceil(data.length / perPage));
+
+      setTotalPage(Math.ceil(totalData.length / perPage));
       setPage(1);
-      setDisplayData(data.slice(start, end));
+      setDisplayData(totalData.slice(start, end));
+      setTotalData(totalData);
     }
-  }, [isLoading]);
+  }, [isLoading, isLoadingOrgRepos]);
 
   return (
     <Box
@@ -37,12 +48,12 @@ const Project = forwardRef<HTMLDivElement, ProjectProps>((_, ref) => {
       paddingBottom={8}
     >
       <Typography
-        variant="h2"
+        variant="h3"
         align="center"
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        Recent projects
+        Projects
       </Typography>
       {!isLoading && totalPage > 1 && (
         <Pagination
@@ -51,7 +62,7 @@ const Project = forwardRef<HTMLDivElement, ProjectProps>((_, ref) => {
           onChange={(_, value) => {
             const start = (value - 1) * perPage;
             const end = value * perPage;
-            setDisplayData(data?.slice(start, end) || []);
+            setDisplayData(totalData?.slice(start, end) || []);
             setPage(value);
           }}
           sx={{ display: "flex", justifyContent: "center", marginBottom: 2 }}
@@ -62,7 +73,7 @@ const Project = forwardRef<HTMLDivElement, ProjectProps>((_, ref) => {
         {isLoading
           ? (
             Array.from(Array(4).keys()).map((_, index) => (
-              <Grid xs={6} key={index}>
+              <Grid md={6} sm={6} xs={12} key={index}>
                 <Skeleton
                   variant="rectangular"
                   width={400}
