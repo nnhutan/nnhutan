@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import App from "./App";
 import { CssBaseline } from "@mui/material";
+import "@fontsource-variable/jetbrains-mono";
 import "./index.scss";
 import {
   Experimental_CssVarsProvider as CssVarsProvider,
@@ -55,13 +56,13 @@ const theme = extendTheme({
     },
   },
   typography: {
-    fontFamily: '"JetBrains Mono", monospace',
+    fontFamily: "'JetBrains Mono Variable', sans-serif",
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
-          font-family: '"JetBrains Mono", monospace';
+          font-family: "'JetBrains Mono Variable', sans-serif";
         }
       `,
     },

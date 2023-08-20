@@ -96,6 +96,7 @@ const Header: React.FC<Props> = (props) => {
           sx={{ m: 1 }}
           checked={theme === "dark"}
           onChange={handleChangeTheme}
+          inputProps={{ "aria-label": "theme switch" }}
         />
       </List>
     </Box>
@@ -154,6 +155,7 @@ const Header: React.FC<Props> = (props) => {
               sx={{ m: 1 }}
               checked={theme === "dark"}
               onChange={handleChangeTheme}
+              inputProps={{ "aria-label": "theme switch" }}
             />
           </Box>
         </Toolbar>
