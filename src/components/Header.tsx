@@ -91,6 +91,12 @@ const Header: React.FC<Props> = (props) => {
             </ListItemButton>
           </ListItem>
         ))}
+
+        <ThemeSwitch
+          sx={{ m: 1 }}
+          checked={theme === "dark"}
+          onChange={handleChangeTheme}
+        />
       </List>
     </Box>
   );
@@ -102,8 +108,11 @@ const Header: React.FC<Props> = (props) => {
         sx={{
           boxShadow: 0,
           top: 0,
-          backgroundColor: trigger ? "rgba(0,0,0,0.3)" : "transparent",
+          backgroundColor: trigger
+            ? "rgba(0,0,0,0.3)"
+            : "transparent !important",
           transition: "all 0.5s ease",
+          backgroundImage: "none",
         }}
         position="fixed"
       >

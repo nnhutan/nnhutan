@@ -1,5 +1,5 @@
 import { Box, Pagination, Skeleton, Typography } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import Grid from "@mui/material/Unstable_Grid2/Grid2"; // Grid version 2
 import { useEffect, useState } from "react";
 import { Repos, useGetOrgReposQuery, useGetReposQuery } from "../api/reposApi";
 import ReposCard from "./ReposCard";

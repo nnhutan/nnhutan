@@ -85,28 +85,32 @@ function App() {
   };
 
   return (
-    <div
-      className={mode === "light" ? "bg-light-mode min-vh-100" : "min-vh-100"}
-    >
+    <>
       <ParticlesBG />
-      <Header handleScroll={handleScroll} />
-      <Toolbar id="back-to-top-anchor" />
-      <Container maxWidth="xl">
-        <Infor ref={inforRef} handleScroll={handleScroll} />
-        <Suspense fallback={<LinearProgress color="success" />}>
-          <About ref={aboutRef} />
-          <Project ref={projectRef} />
-          <Skill ref={skillRef} />
-          <Experience ref={experienceRef} />
-          <More ref={moreRef} />
-        </Suspense>
-      </Container>
-      <ScrollTop>
-        <Fab size="small" aria-label="scroll back to top">
-          <KeyboardArrowUp />
-        </Fab>
-      </ScrollTop>
-    </div>
+      <div
+        className={mode === "light"
+          ? "bg-light-mode min-vh-100"
+          : "bg-dark-mode min-vh-100"}
+      >
+        <Header handleScroll={handleScroll} />
+        <Toolbar id="back-to-top-anchor" />
+        <Container maxWidth="xl">
+          <Infor ref={inforRef} handleScroll={handleScroll} />
+          <Suspense fallback={<LinearProgress color="success" />}>
+            <About ref={aboutRef} />
+            <Project ref={projectRef} />
+            <Skill ref={skillRef} />
+            <Experience ref={experienceRef} />
+            <More ref={moreRef} />
+          </Suspense>
+        </Container>
+        <ScrollTop>
+          <Fab size="small" aria-label="scroll back to top">
+            <KeyboardArrowUp />
+          </Fab>
+        </ScrollTop>
+      </div>
+    </>
   );
 }
 

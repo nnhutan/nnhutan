@@ -8,7 +8,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import Grid from "@mui/material/Unstable_Grid2/Grid2"; // Grid version 2
 import { forwardRef, lazy, useEffect, useRef, useState } from "react";
 import ImageAvt from "../../avatar.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";

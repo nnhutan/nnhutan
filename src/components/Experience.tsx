@@ -1,4 +1,12 @@
-import { Box, Chip, Divider, Hidden, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Chip,
+  Divider,
+  Hidden,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { forwardRef } from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -9,7 +17,6 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import { School } from "@mui/icons-material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 
 interface ExperienceProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -41,11 +48,10 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
             color="primary"
             icon={<LaptopMacIcon />}
           />
-          <Box
+          <Paper
             sx={{
               py: "12px",
               px: 2,
-              bgcolor: "rgba(255, 255, 255, 0.08)",
               borderRadius: "8px",
             }}
           >
@@ -57,17 +63,16 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
               I'm working on projects the are related to the e-commerce field.
               Building RESTful APIs, microservices, and other backend-related
             </Typography>
-          </Box>
+          </Paper>
           <Chip
             label="2022 -- 2023"
             color="secondary"
             icon={<School />}
           />
-          <Box
+          <Paper
             sx={{
               py: "12px",
               px: 2,
-              bgcolor: "rgba(255, 255, 255, 0.08)",
               borderRadius: "8px",
             }}
           >
@@ -101,7 +106,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                 Software Engineering
               </Typography>
             </Stack>
-          </Box>
+          </Paper>
         </Stack>
       </Hidden>
       <Hidden only="xs">
@@ -124,22 +129,24 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
               </TimelineDot>
               <TimelineConnector sx={{ bgcolor: "primary.main" }} />
             </TimelineSeparator>
-            <TimelineContent
-              sx={{
-                py: "12px",
-                px: 2,
-                bgcolor: "rgba(255, 255, 255, 0.08)",
-                borderRadius: "8px",
-              }}
-            >
-              <Typography variant="h6" component="span">
-                Work at Lixibox
-              </Typography>
-              <Typography>Backend developer</Typography>
-              <Typography>
-                I'm working on projects the are related to the e-commerce field.
-                Building RESTful APIs, microservices, and other backend-related
-              </Typography>
+            <TimelineContent>
+              <Paper
+                sx={{
+                  py: "12px",
+                  px: 2,
+                  borderRadius: "8px",
+                }}
+              >
+                <Typography variant="h6" component="span">
+                  Work at Lixibox
+                </Typography>
+                <Typography>Backend developer</Typography>
+                <Typography>
+                  I'm working on projects the are related to the e-commerce
+                  field. Building RESTful APIs, microservices, and other
+                  backend-related
+                </Typography>
+              </Paper>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
@@ -157,44 +164,45 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
               </TimelineDot>
               <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
             </TimelineSeparator>
-            <TimelineContent
-              sx={{
-                py: "12px",
-                px: 2,
-                bgcolor: "rgba(255, 255, 255, 0.08)",
-                borderRadius: "8px",
-              }}
-            >
-              <Typography variant="h6" component="span">
-                Study at Ho Chi Minh University of Technology
-              </Typography>
-              <Typography>Computer Science - Software Engineering</Typography>
-              <Typography gutterBottom>GPA: 3.4/4 -- TOEIC: 800</Typography>
-              <Divider />
-              <Typography
-                fontWeight={500}
-                color="text.secondary"
-                marginTop={1}
+            <TimelineContent>
+              <Paper
+                sx={{
+                  py: "12px",
+                  px: 2,
+                  borderRadius: "8px",
+                }}
               >
-                Top favorite subjects
-              </Typography>
-              <Stack>
-                <Typography>
-                  Principle of Programming Language
+                <Typography variant="h6" component="span">
+                  Study at Ho Chi Minh University of Technology
                 </Typography>
-                <Typography>
-                  Data Structure and Algorithms
+                <Typography>Computer Science - Software Engineering</Typography>
+                <Typography gutterBottom>GPA: 3.4/4 -- TOEIC: 800</Typography>
+                <Divider />
+                <Typography
+                  fontWeight={500}
+                  color="text.secondary"
+                  marginTop={1}
+                >
+                  Top favorite subjects
                 </Typography>
-                <Typography>
-                  Software Architecture
-                </Typography>
-                <Typography>
-                  Computer Networking
-                </Typography>
-                <Typography>
-                  Software Engineering
-                </Typography>
-              </Stack>
+                <Stack>
+                  <Typography>
+                    Principle of Programming Language
+                  </Typography>
+                  <Typography>
+                    Data Structure and Algorithms
+                  </Typography>
+                  <Typography>
+                    Software Architecture
+                  </Typography>
+                  <Typography>
+                    Computer Networking
+                  </Typography>
+                  <Typography>
+                    Software Engineering
+                  </Typography>
+                </Stack>
+              </Paper>
             </TimelineContent>
           </TimelineItem>
         </Timeline>
