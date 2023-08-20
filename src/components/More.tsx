@@ -1,17 +1,36 @@
 import {
   Box,
+  ImageList,
   ImageListItem,
   ImageListItemBar,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
-import { forwardRef } from "react";
-import Masonry from "@mui/lab/Masonry";
+import { forwardRef, lazy, useEffect, useRef, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import useIsInViewport from "../hooks/viewportHook";
+const Typed = lazy(() => import("react-typed"));
 
 interface MoreProps {
   ref: React.RefObject<HTMLDivElement>;
 }
 
 const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
+  const theme = useTheme();
+  const matchDownMd = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchDownLg = useMediaQuery(theme.breakpoints.down("md"));
+  const [show, setShow] = useState(false);
+  const helloRef = useRef<HTMLDivElement>(null);
+  const inViewport = useIsInViewport(helloRef);
+
+  useEffect(() => {
+    if (show) return;
+    if (inViewport) {
+      setShow(true);
+    }
+  }, [inViewport]);
+
   return (
     <Box
       className="min-vh-100"
@@ -23,32 +42,54 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
       paddingBottom={8}
     >
       <Typography
-        variant="h2"
+        variant="h3"
         align="center"
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        More about me
+        More...
       </Typography>
       <Typography
         align="center"
         sx={{ color: "#f8f9fa" }}
         fontSize={16}
+        ref={helloRef}
         gutterBottom
       >
-        I'll show you some of my hobbies, my favorite things, my stories here.
+        {show
+          ? (
+            <Typed
+              typeSpeed={40}
+              strings={[
+                "I'll show you some of my hobbies, my favorite things, my stories here.",
+              ]}
+            />
+          )
+          : (
+            null
+          )}
       </Typography>
       <Box sx={{ width: "100%", maxHeight: "60vh", overflowY: "scroll" }}>
-        <Masonry columns={3} spacing={2}>
+        <ImageList
+          variant="masonry"
+          cols={matchDownMd ? 1 : matchDownLg ? 2 : 3}
+          gap={8}
+        >
           {itemData.map((item, _) => (
             item &&
             (
               <ImageListItem key={item.img}>
-                <img
+                <LazyLoadImage
                   src={`${item.img}?w=162&auto=format`}
                   srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
                   alt={item.title}
                   loading="lazy"
+                  effect="blur"
+                  wrapperProps={{
+                    style: {
+                      display: "block",
+                    },
+                  }}
                   style={{
                     borderBottomLeftRadius: 4,
                     borderBottomRightRadius: 4,
@@ -63,7 +104,7 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
               </ImageListItem>
             )
           ))}
-        </Masonry>
+        </ImageList>
       </Box>
     </Box>
   );

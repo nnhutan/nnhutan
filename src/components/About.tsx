@@ -3,21 +3,34 @@ import {
   Avatar,
   Box,
   Button,
-  Card,
-  CardContent,
   Divider,
+  Paper,
   Stack,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { forwardRef } from "react";
+import { forwardRef, lazy, useEffect, useRef, useState } from "react";
 import ImageAvt from "../../avatar.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import useIsInViewport from "../hooks/viewportHook";
+const Typed = lazy(() => import("react-typed"));
 
 interface AboutProps {
   ref: React.RefObject<HTMLDivElement>;
 }
 
 const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
+  const [show, setShow] = useState(false);
+  const helloRef = useRef<HTMLDivElement>(null);
+  const inViewport = useIsInViewport(helloRef);
+
+  useEffect(() => {
+    if (show) return;
+    if (inViewport) {
+      setShow(true);
+    }
+  }, [inViewport]);
+
   return (
     <Box
       className="min-vh-100"
@@ -29,18 +42,19 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
       paddingBottom={8}
     >
       <Typography
-        variant="h2"
+        variant="h3"
         align="center"
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
         About me
       </Typography>
-      <Card sx={{ paddingY: 5 }}>
-        <CardContent>
+      <Paper sx={{ paddingY: 5 }}>
+        <Box padding={2}>
           <Grid container spacing={2} alignItems="center">
             <Grid
-              xs={6}
+              xs={12}
+              md={6}
               alignItems="center"
               display="flex"
               flexDirection="column"
@@ -49,12 +63,18 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
               <Avatar
                 alt="avatar"
                 src={ImageAvt}
-                sx={{ width: 375, height: 375, border: "2px solid #f1f3f5" }}
+                sx={{
+                  aspectRatio: "1/1",
+                  width: "clamp(200px, 30vw, 300px)",
+                  height: "auto",
+                  border: "2px solid #f1f3f5",
+                }}
               />
               <Stack
-                spacing={2}
-                direction="row"
+                spacing={{ xs: 0.5, md: 2 }}
+                direction={{ xs: "column", md: "row" }}
                 divider={<Divider orientation="vertical" flexItem />}
+                justifyContent="center"
               >
                 <Box display="flex" alignItems="center" gap={2}>
                   <House />
@@ -66,14 +86,26 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 </Box>
               </Stack>
             </Grid>
-            <Grid xs={6}>
+            <Grid xs={12} md={6}>
               <Typography
                 variant="body1"
                 fontSize={20}
                 align="center"
                 paddingBottom={5}
+                ref={helloRef}
               >
-                Hello, I'm <span style={{ fontWeight: 600 }}>Tan</span>!
+                {show
+                  ? (
+                    <Typed
+                      typeSpeed={40}
+                      strings={[
+                        `Hello world, I'm <span style="font-weight: 600;">Tan!</span>`,
+                      ]}
+                    />
+                  )
+                  : (
+                    null
+                  )}
               </Typography>
               <Typography
                 variant="body1"
@@ -85,10 +117,13 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 <span style={{ fontWeight: 600 }}>
                   Ho Chi Minh University of Technology
                 </span>{" "}
-                <img
+                <LazyLoadImage
+                  effect="blur"
                   src="https://e-learning.hcmut.edu.vn/pluginfile.php/1/core_admin/logo/0x200/1685588876/logoBK.png"
+                  width={18}
                   height={18}
                   style={{ verticalAlign: "baseline" }}
+                  alt="BKU logo"
                 />{" "}
                 in 2023 with a bachelor's degree in{" "}
                 <span style={{ fontWeight: 600 }}>
@@ -120,8 +155,8 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
               </Box>
             </Grid>
           </Grid>
-        </CardContent>
-      </Card>
+        </Box>
+      </Paper>
     </Box>
   );
 });

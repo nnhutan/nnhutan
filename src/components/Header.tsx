@@ -1,4 +1,4 @@
-import { AppBar, useScrollTrigger } from "@mui/material";
+import { AppBar, useColorScheme, useScrollTrigger } from "@mui/material";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -11,18 +11,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ThemeSwitch from "./ThemeSwitch";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { selectTheme, setTheme } from "../features/themeSlice";
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
   handleScroll: (item: string) => void;
 }
 
-const drawerWidth = 240;
 const navItems = [
   "About",
   "Projects",
@@ -33,12 +30,25 @@ const navItems = [
 ];
 
 const Header: React.FC<Props> = (props) => {
-  const { window, handleScroll } = props;
+  const { setMode } = useColorScheme();
+  const theme = useAppSelector(selectTheme);
+  const { handleScroll } = props;
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const trigger = useScrollTrigger({});
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+  });
+
+  const dispatch = useAppDispatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+  const handleChangeTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      dispatch(setTheme("dark"));
+    } else {
+      dispatch(setTheme("light"));
+    }
   };
 
   const scrollTo = (item: string) => {
@@ -50,6 +60,14 @@ const Header: React.FC<Props> = (props) => {
       handleScroll(item);
     }
   };
+
+  useEffect(() => {
+    if (theme !== "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  }, [theme]);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -77,10 +95,6 @@ const Header: React.FC<Props> = (props) => {
     </Box>
   );
 
-  const container = window !== undefined
-    ? () => window().document.body
-    : undefined;
-
   return (
     <div>
       <AppBar
@@ -94,21 +108,12 @@ const Header: React.FC<Props> = (props) => {
         position="fixed"
       >
         <Toolbar>
-          <IconButton
-            // color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography
             variant="h6"
             component="div"
             sx={{
               flexGrow: 1,
-              display: { xs: "none", sm: "block" },
+              // display: { xs: "none", sm: "block" },
               cursor: "pointer",
               fontWeight: "600",
             }}
@@ -116,22 +121,36 @@ const Header: React.FC<Props> = (props) => {
           >
             {"<Dinh Nhu Tan />"}
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <IconButton
+            // color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerToggle}
+            sx={{ display: { md: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
             {navItems.map((item) => (
               <Button
                 key={item}
                 sx={{ color: "#fff" }}
                 onClick={() => scrollTo(item)}
+                href={item === "Resume" ? "" : `#${item.toLowerCase()}`}
               >
                 {item}
               </Button>
             ))}
+            <ThemeSwitch
+              sx={{ m: 1 }}
+              checked={theme === "dark"}
+              onChange={handleChangeTheme}
+            />
           </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -139,10 +158,11 @@ const Header: React.FC<Props> = (props) => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
+              width: "100%",
+              maxWidth: "300px",
             },
           }}
         >

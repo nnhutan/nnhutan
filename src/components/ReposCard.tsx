@@ -1,18 +1,19 @@
 import {
-  Avatar,
   Box,
   Button,
-  Card,
-  CardActions,
-  CardContent,
   Chip,
   Divider,
+  Paper,
   Skeleton,
   Stack,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { Repos, useGetReposLanguagesQuery } from "../api/reposApi";
+import {
+  Repos,
+  useGetReposLanguagesQuery,
+  useGetReposOrgLanguagesQuery,
+} from "../api/reposApi";
 import { useEffect, useState } from "react";
 import { GitHub } from "@mui/icons-material";
 
@@ -27,31 +28,49 @@ interface Language {
 
 const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
   const [languages, setLanguages] = useState<Language[]>([]);
-  const { data, isLoading } = useGetReposLanguagesQuery(repo.name);
+  const { data, isLoading } = useGetReposLanguagesQuery(repo.name, {
+    skip: repo.owner.login !== "nnhutan",
+  });
+  const { data: orgData, isLoading: isOrgLoading } =
+    useGetReposOrgLanguagesQuery(repo.name, {
+      skip: repo.owner.login === "nnhutan",
+    });
 
   if (repo.private) return null;
 
   useEffect(() => {
-    if (data) {
-      const total = Object.values(data).reduce((a, b) => a + b, 0); // sum of all values
-      const result = Object.keys(data).map((key) => ({
+    const target = data || orgData;
+    if (target) {
+      const total = Object.values(target).reduce((a, b) => a + b, 0); // sum of all values
+      const result = Object.keys(target).map((key) => ({
         name: key,
-        percent: Math.round((data[key] / total) * 100),
+        percent: Math.round((target[key] / total) * 100),
       }));
       setLanguages(result);
     }
-  }, [data, isLoading]);
+  }, [data, isLoading, orgData, isOrgLoading]);
 
   return (
-    <Grid xs={6}>
-      <Card>
-        <CardContent>
-          <Typography variant="h5" gutterBottom>{repo.name}</Typography>
-          <Typography color="text.secondary" marginBottom={2}>
+    <Grid xs={12} md={6} sm={6}>
+      <Paper sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+        <Box
+          padding={2}
+          display="flex"
+          flexDirection="column"
+          flex={1}
+        >
+          <Typography
+            variant="body1"
+            fontSize={24}
+            gutterBottom
+          >
+            {repo.name}
+          </Typography>
+          <Typography color="text.secondary" marginBottom={1} flex={1}>
             {repo.description || repo.full_name}
           </Typography>
           <Divider />
-          <Stack direction="row" flexWrap="wrap" gap={1} marginTop={2}>
+          <Stack direction="row" flexWrap="wrap" gap={1} marginTop={1}>
             <Typography color="text.secondary">
               Languages:
             </Typography>
@@ -78,8 +97,13 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
                 ))
               )}
           </Stack>
-        </CardContent>
-        <CardActions sx={{ padding: "16px" }}>
+        </Box>
+        <Box
+          padding={2}
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+        >
           <Button
             variant="outlined"
             startIcon={<GitHub />}
@@ -96,8 +120,8 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
           >
             Updated on {new Date(repo.updated_at).toLocaleDateString()}
           </Typography>
-        </CardActions>
-      </Card>
+        </Box>
+      </Paper>
     </Grid>
   );
 };
