@@ -7,8 +7,10 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { forwardRef } from "react";
+import { forwardRef, lazy, useEffect, useRef, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import useIsInViewport from "../hooks/viewportHook";
+const Typed = lazy(() => import("react-typed"));
 
 interface MoreProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -18,6 +20,16 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down("sm"));
   const matchDownLg = useMediaQuery(theme.breakpoints.down("md"));
+  const [show, setShow] = useState(false);
+  const helloRef = useRef<HTMLDivElement>(null);
+  const inViewport = useIsInViewport(helloRef);
+
+  useEffect(() => {
+    if (show) return;
+    if (inViewport) {
+      setShow(true);
+    }
+  }, [inViewport]);
 
   return (
     <Box
@@ -41,9 +53,21 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
         align="center"
         sx={{ color: "#f8f9fa" }}
         fontSize={16}
+        ref={helloRef}
         gutterBottom
       >
-        I'll show you some of my hobbies, my favorite things, my stories here.
+        {show
+          ? (
+            <Typed
+              typeSpeed={40}
+              strings={[
+                "I'll show you some of my hobbies, my favorite things, my stories here.",
+              ]}
+            />
+          )
+          : (
+            null
+          )}
       </Typography>
       <Box sx={{ width: "100%", maxHeight: "60vh", overflowY: "scroll" }}>
         <ImageList

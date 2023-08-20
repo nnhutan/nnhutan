@@ -1,10 +1,9 @@
 import {
+  Box,
   Button,
-  Card,
-  CardActions,
-  CardContent,
   Chip,
   Divider,
+  Paper,
   Skeleton,
   Stack,
   Typography,
@@ -53,13 +52,12 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
 
   return (
     <Grid xs={12} md={6} sm={6}>
-      <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-        <CardContent
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-          }}
+      <Paper sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+        <Box
+          padding={2}
+          display="flex"
+          flexDirection="column"
+          flex={1}
         >
           <Typography
             variant="body1"
@@ -99,8 +97,13 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
                 ))
               )}
           </Stack>
-        </CardContent>
-        <CardActions sx={{ padding: "16px" }}>
+        </Box>
+        <Box
+          padding={2}
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+        >
           <Button
             variant="outlined"
             startIcon={<GitHub />}
@@ -117,8 +120,8 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
           >
             Updated on {new Date(repo.updated_at).toLocaleDateString()}
           </Typography>
-        </CardActions>
-      </Card>
+        </Box>
+      </Paper>
     </Grid>
   );
 };

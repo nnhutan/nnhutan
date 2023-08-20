@@ -1,5 +1,11 @@
 import { lazy, Suspense, useEffect, useRef } from "react";
-import { Container, LinearProgress } from "@mui/material";
+import {
+  Container,
+  Fab,
+  LinearProgress,
+  Toolbar,
+  useColorScheme,
+} from "@mui/material";
 import Header from "./components/Header";
 import ParticlesBG from "./components/Particles";
 import Infor from "./components/Infor";
@@ -9,7 +15,8 @@ const Project = lazy(() => import("./components/Project"));
 const Skill = lazy(() => import("./components/Skill"));
 const Experience = lazy(() => import("./components/Experience"));
 const More = lazy(() => import("./components/More"));
-import "./App.scss";
+import ScrollTop from "./components/ScrollTop";
+import { KeyboardArrowUp } from "@mui/icons-material";
 
 function App() {
   const inforRef = useRef<HTMLDivElement>(null);
@@ -18,6 +25,7 @@ function App() {
   const skillRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const moreRef = useRef<HTMLDivElement>(null);
+  const { mode } = useColorScheme();
 
   useEffect(() => {
     setTimeout(() => {
@@ -77,9 +85,12 @@ function App() {
   };
 
   return (
-    <div className="App main-bg">
+    <div
+      className={mode === "light" ? "bg-light-mode min-vh-100" : "min-vh-100"}
+    >
       <ParticlesBG />
       <Header handleScroll={handleScroll} />
+      <Toolbar id="back-to-top-anchor" />
       <Container maxWidth="xl">
         <Infor ref={inforRef} handleScroll={handleScroll} />
         <Suspense fallback={<LinearProgress color="success" />}>
@@ -90,6 +101,11 @@ function App() {
           <More ref={moreRef} />
         </Suspense>
       </Container>
+      <ScrollTop>
+        <Fab size="small" aria-label="scroll back to top">
+          <KeyboardArrowUp />
+        </Fab>
+      </ScrollTop>
     </div>
   );
 }

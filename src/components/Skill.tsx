@@ -1,12 +1,4 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  SvgIcon,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
+import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useEffect, useState } from "react";
 import { forwardRef } from "react";
@@ -218,29 +210,28 @@ function TabPanel(props: TabPanelProps) {
     >
       {data.map((item, index) => (
         <Grid xs={12} sm={6} md={3} key={index}>
-          <Card sx={{ height: "100%" }}>
-            <CardContent>
-              <Box
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-                gap={1}
+          <Paper sx={{ height: "100%" }}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="center"
+              gap={1}
+              padding={2}
+            >
+              {item.icon}
+              <Typography fontSize={16} align="center">
+                {item.name}
+              </Typography>
+              <Typography
+                variant="caption"
+                align="center"
+                color="text.secondary"
               >
-                {item.icon}
-                <Typography fontSize={16} align="center">
-                  {item.name}
-                </Typography>
-                <Typography
-                  variant="caption"
-                  align="center"
-                  color="text.secondary"
-                >
-                  {item?.description}
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
+                {item?.description}
+              </Typography>
+            </Box>
+          </Paper>
         </Grid>
       ))}
     </Grid>

@@ -1,4 +1,4 @@
-import { AppBar, Link, useScrollTrigger } from "@mui/material";
+import { AppBar, useColorScheme, useScrollTrigger } from "@mui/material";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -11,7 +11,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ThemeSwitch from "./ThemeSwitch";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { selectTheme, setTheme } from "../features/themeSlice";
 
 interface Props {
   handleScroll: (item: string) => void;
@@ -27,14 +30,25 @@ const navItems = [
 ];
 
 const Header: React.FC<Props> = (props) => {
+  const { setMode } = useColorScheme();
+  const theme = useAppSelector(selectTheme);
   const { handleScroll } = props;
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const trigger = useScrollTrigger({
     disableHysteresis: true,
   });
 
+  const dispatch = useAppDispatch();
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+  const handleChangeTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      dispatch(setTheme("dark"));
+    } else {
+      dispatch(setTheme("light"));
+    }
   };
 
   const scrollTo = (item: string) => {
@@ -46,6 +60,14 @@ const Header: React.FC<Props> = (props) => {
       handleScroll(item);
     }
   };
+
+  useEffect(() => {
+    if (theme !== "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  }, [theme]);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -119,6 +141,11 @@ const Header: React.FC<Props> = (props) => {
                 {item}
               </Button>
             ))}
+            <ThemeSwitch
+              sx={{ m: 1 }}
+              checked={theme === "dark"}
+              onChange={handleChangeTheme}
+            />
           </Box>
         </Toolbar>
       </AppBar>

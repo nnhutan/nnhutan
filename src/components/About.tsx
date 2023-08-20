@@ -3,22 +3,34 @@ import {
   Avatar,
   Box,
   Button,
-  Card,
-  CardContent,
   Divider,
+  Paper,
   Stack,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { forwardRef } from "react";
+import { forwardRef, lazy, useEffect, useRef, useState } from "react";
 import ImageAvt from "../../avatar.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import useIsInViewport from "../hooks/viewportHook";
+const Typed = lazy(() => import("react-typed"));
 
 interface AboutProps {
   ref: React.RefObject<HTMLDivElement>;
 }
 
 const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
+  const [show, setShow] = useState(false);
+  const helloRef = useRef<HTMLDivElement>(null);
+  const inViewport = useIsInViewport(helloRef);
+
+  useEffect(() => {
+    if (show) return;
+    if (inViewport) {
+      setShow(true);
+    }
+  }, [inViewport]);
+
   return (
     <Box
       className="min-vh-100"
@@ -37,8 +49,8 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
       >
         About me
       </Typography>
-      <Card sx={{ paddingY: 5 }}>
-        <CardContent>
+      <Paper sx={{ paddingY: 5 }}>
+        <Box padding={2}>
           <Grid container spacing={2} alignItems="center">
             <Grid
               xs={12}
@@ -80,8 +92,20 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 fontSize={20}
                 align="center"
                 paddingBottom={5}
+                ref={helloRef}
               >
-                Hello, I'm <span style={{ fontWeight: 600 }}>Tan</span>!
+                {show
+                  ? (
+                    <Typed
+                      typeSpeed={40}
+                      strings={[
+                        `Hello world, I'm <span style="font-weight: 600;">Tan!</span>`,
+                      ]}
+                    />
+                  )
+                  : (
+                    null
+                  )}
               </Typography>
               <Typography
                 variant="body1"
@@ -131,8 +155,8 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
               </Box>
             </Grid>
           </Grid>
-        </CardContent>
-      </Card>
+        </Box>
+      </Paper>
     </Box>
   );
 });

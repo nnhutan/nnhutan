@@ -7,6 +7,7 @@ import {
 } from "@mui/icons-material";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { forwardRef } from "react";
+import Typed from "react-typed";
 
 interface InforProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -40,6 +41,21 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
           }}
         >
           Software Engineer
+        </Typography>
+        <Typography
+          fontSize={24}
+          fontWeight={300}
+          align="center"
+          sx={{
+            color: "#f8f9fa",
+          }}
+        >
+          <Typed
+            strings={[
+              "Code... where logic becomes magic!",
+            ]}
+            typeSpeed={80}
+          />
         </Typography>
         <Stack
           direction="row"
