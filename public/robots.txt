@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://dinhnhutan.info/sitemap.xml
+Sitemap: https://www.dinhnhutan.info/sitemap.xml
+Sitemap: http://dinhnhutan.info/sitemap.xml
+Sitemap: http://www.dinhnhutan.info/sitemap.xml
