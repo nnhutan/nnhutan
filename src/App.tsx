@@ -78,9 +78,7 @@ function App() {
 
   return (
     <div className="App main-bg">
-      {
-        // <ParticlesBG />
-      }
+      <ParticlesBG />
       <Header handleScroll={handleScroll} />
       <Container maxWidth="xl">
         <Infor ref={inforRef} handleScroll={handleScroll} />
