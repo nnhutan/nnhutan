@@ -94,8 +94,10 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 </span>{" "}
                 <img
                   src="https://e-learning.hcmut.edu.vn/pluginfile.php/1/core_admin/logo/0x200/1685588876/logoBK.png"
+                  width="auto"
                   height={18}
                   style={{ verticalAlign: "baseline" }}
+                  alt="BKU logo"
                 />{" "}
                 in 2023 with a bachelor's degree in{" "}
                 <span style={{ fontWeight: 600 }}>

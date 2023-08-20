@@ -55,6 +55,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
             color="custom"
             href="https://github.com/nnhutan"
             target="_blank"
+            aria-label="GitHub"
           >
             <GitHub fontSize="large" />
           </Button>
@@ -62,6 +63,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
             color="custom"
             href="https://facebook.com/dinhnhutan"
             target="_blank"
+            aria-label="Facebook"
           >
             <Facebook fontSize="large" />
           </Button>
@@ -69,6 +71,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
             color="custom"
             href="https://instagram.com/dinhnhutan"
             target="_blank"
+            aria-label="Instagram"
           >
             <Instagram fontSize="large" />
           </Button>
@@ -76,6 +79,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
             color="custom"
             href="https://www.linkedin.com/in/dinhnhutan/"
             target="_blank"
+            aria-label="LinkedIn"
           >
             <LinkedIn fontSize="large" />
           </Button>
@@ -83,6 +87,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
             color="custom"
             href="https://twitter.com/nnhutan"
             target="_blank"
+            aria-label="Twitter"
           >
             <Twitter fontSize="large" />
           </Button>
