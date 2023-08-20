@@ -5,7 +5,7 @@ import {
   LinkedIn,
   Twitter,
 } from "@mui/icons-material";
-import { Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { forwardRef } from "react";
 
 interface InforProps {
@@ -93,15 +93,17 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
           </Button>
         </Stack>
         <div>
-          <Button
-            variant="outlined"
-            sx={{ marginX: "auto", display: "block" }}
-            color="custom"
-            size="large"
-            onClick={() => handleScroll("About")}
-          >
-            More about me
-          </Button>
+          <Box textAlign="center">
+            <Button
+              variant="outlined"
+              color="custom"
+              size="large"
+              onClick={() => handleScroll("About")}
+              href="#about"
+            >
+              More about me
+            </Button>
+          </Box>
         </div>
       </Stack>
     );

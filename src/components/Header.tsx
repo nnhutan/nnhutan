@@ -114,7 +114,7 @@ const Header: React.FC<Props> = (props) => {
                 key={item}
                 sx={{ color: "#fff" }}
                 onClick={() => scrollTo(item)}
-                href={`#${item.toLowerCase()}`}
+                href={item === "Resume" ? "" : `#${item.toLowerCase()}`}
               >
                 {item}
               </Button>

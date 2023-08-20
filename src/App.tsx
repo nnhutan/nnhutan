@@ -1,14 +1,15 @@
-import { Container } from "@mui/material";
-import "./App.scss";
+import { lazy, Suspense, useEffect, useRef } from "react";
+import { Container, LinearProgress } from "@mui/material";
 import Header from "./components/Header";
 import ParticlesBG from "./components/Particles";
-import About from "./components/About";
 import Infor from "./components/Infor";
-import Project from "./components/Project";
-import { useEffect, useRef } from "react";
-import Skill from "./components/Skill";
-import Experience from "./components/Experience";
-import More from "./components/More";
+
+const About = lazy(() => import("./components/About"));
+const Project = lazy(() => import("./components/Project"));
+const Skill = lazy(() => import("./components/Skill"));
+const Experience = lazy(() => import("./components/Experience"));
+const More = lazy(() => import("./components/More"));
+import "./App.scss";
 
 function App() {
   const inforRef = useRef<HTMLDivElement>(null);
@@ -77,15 +78,19 @@ function App() {
 
   return (
     <div className="App main-bg">
-      <ParticlesBG />
+      {
+        // <ParticlesBG />
+      }
       <Header handleScroll={handleScroll} />
       <Container maxWidth="xl">
         <Infor ref={inforRef} handleScroll={handleScroll} />
-        <About ref={aboutRef} />
-        <Project ref={projectRef} />
-        <Skill ref={skillRef} />
-        <Experience ref={experienceRef} />
-        <More ref={moreRef} />
+        <Suspense fallback={<LinearProgress color="success" />}>
+          <About ref={aboutRef} />
+          <Project ref={projectRef} />
+          <Skill ref={skillRef} />
+          <Experience ref={experienceRef} />
+          <More ref={moreRef} />
+        </Suspense>
       </Container>
     </div>
   );

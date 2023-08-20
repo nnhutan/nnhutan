@@ -41,6 +41,7 @@ import {
   SportsSoccer,
   Translate,
 } from "@mui/icons-material";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface SkillProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -138,7 +139,8 @@ const technologies = [
     name: "Ant Design",
     description: "Main UI library for my Graduation Thesis Project",
     icon: (
-      <img
+      <LazyLoadImage
+        effect="blur"
         src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
         height="32"
         width="32"

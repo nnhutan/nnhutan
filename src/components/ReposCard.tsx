@@ -61,7 +61,13 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
             flex: 1,
           }}
         >
-          <Typography variant="h5" gutterBottom>{repo.name}</Typography>
+          <Typography
+            variant="body1"
+            fontSize={24}
+            gutterBottom
+          >
+            {repo.name}
+          </Typography>
           <Typography color="text.secondary" marginBottom={1} flex={1}>
             {repo.description || repo.full_name}
           </Typography>

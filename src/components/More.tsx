@@ -1,17 +1,24 @@
 import {
   Box,
+  ImageList,
   ImageListItem,
   ImageListItemBar,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { forwardRef } from "react";
-import Masonry from "@mui/lab/Masonry";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface MoreProps {
   ref: React.RefObject<HTMLDivElement>;
 }
 
 const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
+  const theme = useTheme();
+  const matchDownMd = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchDownLg = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box
       className="min-vh-100"
@@ -39,23 +46,26 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
         I'll show you some of my hobbies, my favorite things, my stories here.
       </Typography>
       <Box sx={{ width: "100%", maxHeight: "60vh", overflowY: "scroll" }}>
-        <Masonry
-          columns={{
-            xs: 1,
-            sm: 2,
-            md: 3,
-          }}
-          spacing={2}
+        <ImageList
+          variant="masonry"
+          cols={matchDownMd ? 1 : matchDownLg ? 2 : 3}
+          gap={8}
         >
           {itemData.map((item, _) => (
             item &&
             (
               <ImageListItem key={item.img}>
-                <img
+                <LazyLoadImage
                   src={`${item.img}?w=162&auto=format`}
                   srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
                   alt={item.title}
                   loading="lazy"
+                  effect="blur"
+                  wrapperProps={{
+                    style: {
+                      display: "block",
+                    },
+                  }}
                   style={{
                     borderBottomLeftRadius: 4,
                     borderBottomRightRadius: 4,
@@ -70,7 +80,7 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
               </ImageListItem>
             )
           ))}
-        </Masonry>
+        </ImageList>
       </Box>
     </Box>
   );

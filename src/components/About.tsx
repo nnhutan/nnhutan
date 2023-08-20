@@ -12,6 +12,7 @@ import {
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { forwardRef } from "react";
 import ImageAvt from "../../avatar.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface AboutProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -92,9 +93,10 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 <span style={{ fontWeight: 600 }}>
                   Ho Chi Minh University of Technology
                 </span>{" "}
-                <img
+                <LazyLoadImage
+                  effect="blur"
                   src="https://e-learning.hcmut.edu.vn/pluginfile.php/1/core_admin/logo/0x200/1685588876/logoBK.png"
-                  width="auto"
+                  width={18}
                   height={18}
                   style={{ verticalAlign: "baseline" }}
                   alt="BKU logo"
