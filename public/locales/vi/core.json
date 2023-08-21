@@ -1,0 +1,53 @@
+{
+  "title": "Đinh Như Tân | Kỹ sư Phần mềm | Lập trình viên Fullstack",
+  "description": "Xin chào, tôi là Tân! Tôi tốt nghiệp từ Đại học Bách Khoa Thành phố Hồ Chí Minh vào năm 2023 với bằng cử nhân Ngành Khoa học Máy tính - Kỹ thuật Phần mềm. Hiện tại, tôi đang sống và làm việc tại Thành phố Hồ Chí Minh với vai trò là một Kỹ sư Phần mềm. Tôi đam mê lập trình và thích học những điều mới mẻ.",
+  "author": "Đinh Như Tân",
+  "header": {
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "resume": "Hồ sơ",
+    "skills": "Kỹ năng",
+    "experiences": "Kinh nghiệm",
+    "more": "Khác"
+  },
+  "info": {
+    "fullname": "Đinh Như Tân",
+    "firstname": "Tân",
+    "job": "Kỹ sư Phần mềm",
+    "slogan": "Lập trình... nơi logic trở thành ma thuật!",
+    "button": "Xem thêm về tôi"
+  },
+  "about": {
+    "title": "Về tôi",
+    "subtitle": "Xin chào, tôi là",
+    "graduate_from": "Tôi tốt nghiệp từ",
+    "university": "Đại học Bách Khoa Thành phố Hồ Chí Minh",
+    "in_year_with_degree": "vào năm 2023 với bằng cử nhân",
+    "in_major": "Ngành Khoa học Máy tính - Kỹ thuật Phần mềm",
+    "currently_city_as": "Hiện tại, tôi đang sống và làm việc tại Thành phố Hồ Chí Minh với vai trò là",
+    "passionate": "Tôi đam mê lập trình và thích học những điều mới mẻ.",
+    "hometown": "Lệ Thủy, Quảng Bình",
+    "address": "Gò Vấp, Thành phố Hồ Chí Minh"
+  },
+  "projects": {
+    "title": "Dự án",
+    "repository": "Kho mã nguồn",
+    "update": "Cập nhật lần cuối",
+    "languages": "Ngôn ngữ"
+  },
+  "skills": {
+    "title": "Kỹ năng",
+    "programming": "Lập trình",
+    "technologies": "Công nghệ",
+    "miscellaneous": "Khác",
+    "soft_skills": "Kỹ năng mềm"
+  },
+  "experiences": {
+    "current": "Hiện tại",
+    "title": "Kinh nghiệm"
+  },
+  "more": {
+    "title": "Khác...",
+    "subtitle": "Tôi sẽ chia sẻ với bạn một số sở thích, đồ ưa thích và câu chuyện của tôi ở đây."
+  }
+}

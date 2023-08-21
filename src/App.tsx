@@ -3,6 +3,7 @@ import {
   Container,
   Fab,
   LinearProgress,
+  SelectChangeEvent,
   Toolbar,
   useColorScheme,
 } from "@mui/material";
@@ -86,7 +87,9 @@ function App() {
 
   return (
     <>
-      <ParticlesBG />
+      {
+        // <ParticlesBG />
+      }
       <div
         className={mode === "light"
           ? "bg-light-mode min-vh-100"

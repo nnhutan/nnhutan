@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Repos, useGetOrgReposQuery, useGetReposQuery } from "../api/reposApi";
 import ReposCard from "./ReposCard";
 import { forwardRef } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ProjectProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -11,6 +12,7 @@ interface ProjectProps {
 const perPage = 4;
 
 const Project = forwardRef<HTMLDivElement, ProjectProps>((_, ref) => {
+  const { t } = useTranslation("core");
   const { data, isLoading } = useGetReposQuery(undefined);
   const { data: orgRepos, isLoading: isLoadingOrgRepos } = useGetOrgReposQuery(
     undefined,
@@ -53,7 +55,7 @@ const Project = forwardRef<HTMLDivElement, ProjectProps>((_, ref) => {
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        Projects
+        {t("projects.title")}
       </Typography>
       {!isLoading && totalPage > 1 && (
         <Pagination

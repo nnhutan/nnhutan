@@ -1,0 +1,20 @@
+{
+  "lixibox": {
+    "title": "Làm việc tại LixiBox",
+    "position": "Lập trình viên Backend",
+    "description": "Tôi đang làm việc trên các dự án liên quan đến lĩnh vực thương mại điện tử. Xây dựng các API RESTful, dịch vụ micro, và những phần liên quan đến phía backend khác.",
+    "time": "2022 - Hiện tại"
+  },
+  "hcmut": {
+    "title": "Học tại Đại học Bách Khoa Thành phố Hồ Chí Minh",
+    "major": "Khoa học Máy tính - Kỹ thuật Phần mềm",
+    "score": "Điểm trung bình học tập: 3.4/4 -- TOEIC: 800",
+    "top_subject": "Các môn học ưa thích nhất",
+    "ppl": "Nguyên lý Ngôn ngữ Lập trình",
+    "algo": "Cấu trúc Dữ liệu và Giải thuật",
+    "sa": "Kiến trúc Phần mềm",
+    "se": "Kỹ thuật Phần mềm",
+    "cn": "Mạng Máy tính",
+    "time": "2019 - 2023"
+  }
+}

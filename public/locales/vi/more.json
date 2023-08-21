@@ -1,0 +1,42 @@
+{
+  "Soccer": {
+    "title": "Bóng đá",
+    "description": "Tôi thực sự yêu thích bóng đá"
+  },
+  "Volleyball": {
+    "title": "Bóng chuyền",
+    "description": "Bóng chuyền là một phần quý giá trong tuổi thơ của tôi"
+  },
+  "Swimming": {
+    "title": "Bơi lội",
+    "description": "Tôi có thể bơi với nhiều kiểu bơi khác nhau"
+  },
+  "Badminton": {
+    "title": "Cầu lông",
+    "description": "Tôi cũng thích cầu lông mặc dù tôi không giỏi"
+  },
+  "Table tennis": {
+    "title": "Bóng bàn",
+    "description": "Tôi không giỏi bóng bàn nhưng tôi thích nó"
+  },
+  "Billiards": {
+    "title": "Bi-a",
+    "description": "Tôi chơi bi-a cùng bạn bè vào mỗi cuối tuần"
+  },
+  "Fix bugs": {
+    "title": "Sửa lỗi",
+    "description": "..."
+  },
+  "Camera": {
+    "title": "Máy ảnh",
+    "description": "Tôi thích chụp ảnh nhưng nếu tôi chụp thì sẽ thảm họa"
+  },
+  "Coffee": {
+    "title": "Cà phê",
+    "description": "Tôi là một người nghiện cà phê"
+  },
+  "Travel": {
+    "title": "Du lịch",
+    "description": "Tôi yêu thích du lịch nhưng ví tiền của tôi không thích"
+  }
+}

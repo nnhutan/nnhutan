@@ -10,6 +10,7 @@ import {
 import { forwardRef, lazy, useEffect, useRef, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useIsInViewport from "../hooks/viewportHook";
+import { useTranslation } from "react-i18next";
 const Typed = lazy(() => import("react-typed"));
 
 interface MoreProps {
@@ -23,6 +24,7 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
   const [show, setShow] = useState(false);
   const helloRef = useRef<HTMLDivElement>(null);
   const inViewport = useIsInViewport(helloRef);
+  const { t } = useTranslation(["core", "more"]);
 
   useEffect(() => {
     if (show) return;
@@ -47,7 +49,7 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        More...
+        {t("more.title")}
       </Typography>
       <Typography
         align="center"
@@ -61,7 +63,7 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
             <Typed
               typeSpeed={40}
               strings={[
-                "I'll show you some of my hobbies, my favorite things, my stories here.",
+                t("more.subtitle"),
               ]}
             />
           )
@@ -98,8 +100,8 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
                   }}
                 />
                 <ImageListItemBar
-                  title={item.title}
-                  subtitle={item.subtitle}
+                  title={t(`${item.title}.title`, { ns: "more" })}
+                  subtitle={t(`${item.title}.description`, { ns: "more" })}
                 />
               </ImageListItem>
             )

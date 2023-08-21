@@ -34,6 +34,7 @@ import {
   Translate,
 } from "@mui/icons-material";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Trans, useTranslation } from "react-i18next";
 
 interface SkillProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -88,21 +89,25 @@ const miscellaneous = [
     name: "Git",
     color: "#f34f29",
     icon: <GitOriginal size={32} />,
+    description: true,
   },
   {
     name: "Vim/NeoVim",
     color: "#019733",
     icon: <VimOriginal size={32} />,
+    description: true,
   },
   {
     name: "Shell/Bash",
     color: "#4eaa25",
     icon: <BashOriginal size={32} />,
+    description: true,
   },
   {
     name: "LaTeX",
     color: "#008080",
     icon: <LatexOriginal size={32} />,
+    description: true,
   },
 ];
 
@@ -183,14 +188,15 @@ const softSkills = [
     icon: <CoPresent sx={{ color: "#e76f51" }} />,
   },
   {
-    name: "English 800 TOEIC",
+    name: "English",
     icon: <Translate sx={{ color: "#e63946" }} />,
   },
   {
-    name: "Can play a lot of sports",
+    name: "Sports",
     icon: <SportsSoccer sx={{ color: "#c77dff" }} />,
   },
 ];
+
 interface TabPanelProps {
   index: number;
   value: number;
@@ -198,6 +204,7 @@ interface TabPanelProps {
 }
 function TabPanel(props: TabPanelProps) {
   const { data, index, value } = props;
+  const { t } = useTranslation("skills");
 
   return (
     <Grid
@@ -221,14 +228,14 @@ function TabPanel(props: TabPanelProps) {
             >
               {item.icon}
               <Typography fontSize={16} align="center">
-                {item.name}
+                {t(`${item.name}.title`)}
               </Typography>
               <Typography
                 variant="caption"
                 align="center"
                 color="text.secondary"
               >
-                {item?.description}
+                {item?.description && (t(`${item.name}.description`))}
               </Typography>
             </Box>
           </Paper>
@@ -240,6 +247,7 @@ function TabPanel(props: TabPanelProps) {
 
 const Skill = forwardRef<HTMLDivElement, SkillProps>((_, ref) => {
   const [value, setValue] = useState(2);
+  const { t } = useTranslation("core");
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -265,7 +273,7 @@ const Skill = forwardRef<HTMLDivElement, SkillProps>((_, ref) => {
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        Skills
+        {t("skills.title")}
       </Typography>
       <Grid container width="100%" spacing={2} minHeight="50vh">
         <Grid xs={12} sm={3} md={2}>
@@ -277,10 +285,10 @@ const Skill = forwardRef<HTMLDivElement, SkillProps>((_, ref) => {
             textColor="inherit"
             sx={{ bgcolor: "rgba(0,0,0,0.3)", borderRadius: "8px" }}
           >
-            <Tab label="Programming" sx={{ color: "#f8f9fa" }} />
-            <Tab label="Technologies" sx={{ color: "#f8f9fa" }} />
-            <Tab label="Miscellaneous" sx={{ color: "#f8f9fa" }} />
-            <Tab label="Soft skills" sx={{ color: "#f8f9fa" }} />
+            <Tab label={t("skills.programming")} sx={{ color: "#f8f9fa" }} />
+            <Tab label={t("skills.technologies")} sx={{ color: "#f8f9fa" }} />
+            <Tab label={t("skills.miscellaneous")} sx={{ color: "#f8f9fa" }} />
+            <Tab label={t("skills.soft_skills")} sx={{ color: "#f8f9fa" }} />
           </Tabs>
         </Grid>
 

@@ -13,6 +13,7 @@ import { forwardRef, lazy, useEffect, useRef, useState } from "react";
 import ImageAvt from "../../avatar.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useIsInViewport from "../hooks/viewportHook";
+import { useTranslation } from "react-i18next";
 const Typed = lazy(() => import("react-typed"));
 
 interface AboutProps {
@@ -23,6 +24,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
   const [show, setShow] = useState(false);
   const helloRef = useRef<HTMLDivElement>(null);
   const inViewport = useIsInViewport(helloRef);
+  const { t } = useTranslation("core");
 
   useEffect(() => {
     if (show) return;
@@ -47,7 +49,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        About me
+        {t("about.title")}
       </Typography>
       <Paper sx={{ paddingY: 5 }}>
         <Box padding={2}>
@@ -78,11 +80,11 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
               >
                 <Box display="flex" alignItems="center" gap={2}>
                   <House />
-                  <Typography variant="body1">Le Thuy, Quang Binh</Typography>
+                  <Typography variant="body1">{t("about.hometown")}</Typography>
                 </Box>
                 <Box display="flex" alignItems="center" gap={2}>
                   <LocationOn />
-                  <Typography variant="body1">Go Vap, Ho Chi Minh</Typography>
+                  <Typography variant="body1">{t("about.address")}</Typography>
                 </Box>
               </Stack>
             </Grid>
@@ -99,7 +101,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                     <Typed
                       typeSpeed={40}
                       strings={[
-                        `Hello world, I'm <span style="font-weight: 600;">Tan!</span>`,
+                        `${t("about.subtitle")
+                        } <span style="font-weight: 600;">${t("info.firstname")
+                        }!</span>`,
                       ]}
                     />
                   )
@@ -113,9 +117,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 align="center"
                 paddingBottom={5}
               >
-                I graduated from{" "}
+                {t("about.graduate_from")}{" "}
                 <span style={{ fontWeight: 600 }}>
-                  Ho Chi Minh University of Technology
+                  {t("about.university")}
                 </span>{" "}
                 <LazyLoadImage
                   effect="blur"
@@ -125,9 +129,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                   style={{ verticalAlign: "baseline" }}
                   alt="BKU logo"
                 />{" "}
-                in 2023 with a bachelor's degree in{" "}
+                {t("about.in_year_with_degree")}{" "}
                 <span style={{ fontWeight: 600 }}>
-                  Computer Science - Software Engineering.
+                  {t("about.in_major")}
                 </span>
               </Typography>
               <Typography
@@ -136,10 +140,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                 align="center"
                 paddingBottom={5}
               >
-                I'm currently living and working in Ho Chi Minh city as a{" "}
-                <span style={{ fontWeight: 600 }}>Software Engineer</span>
-                .I'm passionate about programming and I love to learn new
-                things.
+                {t("about.currently_city_as")}{" "}
+                <span style={{ fontWeight: 600 }}>{t("info.job")}</span>
+                . {t("about.passionate")}
               </Typography>
               <Box textAlign="center">
                 <Button
@@ -150,7 +153,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                   href="https://dinhnhutan.notion.site/DINH-NHU-TAN-fbaf5cec35b2471c8a24922572f5cbbf?pvs=4"
                   target="_blank"
                 >
-                  Resume
+                  {t("header.resume")}
                 </Button>
               </Box>
             </Grid>

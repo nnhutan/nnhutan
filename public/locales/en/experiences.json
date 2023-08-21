@@ -1,0 +1,20 @@
+{
+  "lixibox": {
+    "title": "Work at LixiBox",
+    "position": "Backend Developer",
+    "description": "I'm working on projects the are related to the e-commerce field. Building RESTful APIs, microservices, and other backend-related",
+    "time": "2022 - Present"
+  },
+  "hcmut": {
+    "title": "Study at Ho Chi Minh University of Technology",
+    "major": "Computer Science - Software Engineering",
+    "score": "GPA: 3.4/4 -- TOEIC: 800",
+    "top_subject": "Top favorite subjects",
+    "ppl": "Principles of Programming Languages",
+    "algo": "Algorithms and Data Structures",
+    "sa": "Software Architecture",
+    "se": "Software Engineering",
+    "cn": "Computer Networks",
+    "time": "2019 - 2023"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Dinh Nhu Tan | Software Engineer | Fullstack Developer",
+  "description": "Hello, I'm Tan! I graduated from Ho Chi Minh University of Technology  in 2023 with a bachelor's degree in Computer Science - Software Engineering. I'm currently living and working in Ho Chi Minh city as a Software Engineer.I'm passionate about programming and I love to learn new things.",
+  "author": "Dinh Nhu Tan",
+  "header": {
+    "about": "About",
+    "projects": "Projects",
+    "resume": "Resume",
+    "skills": "Skills",
+    "experiences": "Experiences",
+    "more": "More"
+  },
+  "info": {
+    "fullname": "Dinh Nhu Tan",
+    "firstname": "Tan",
+    "job": "Software Engineer",
+    "slogan": "Code... where logic becomes magic!",
+    "button": "More about me"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Hello, I'm",
+    "graduate_from": "I graduated from",
+    "university": "Ho Chi Minh University of Technology",
+    "in_year_with_degree": "in 2023 with a bachelor's degree",
+    "in_major": "in Computer Science - Software Engineering",
+    "currently_city_as": "I'm currently living and working in Ho Chi Minh city as a",
+    "passionate": "I'm passionate about programming and I love to learn new things.",
+    "hometown": "Le Thuy, Quang Binh",
+    "address": "Go Vap, Ho Chi Minh"
+  },
+  "projects": {
+    "title": "Projects",
+    "repository": "Repository",
+    "update": "Last update",
+    "languages": "Languages"
+  },
+  "skills": {
+    "title": "Skills",
+    "programming": "Programming",
+    "technologies": "Technologies",
+    "miscellaneous": "Miscellaneous",
+    "soft_skills": "Soft skills"
+  },
+  "experiences": {
+    "current": "Current",
+    "title": "Experiences"
+  },
+  "more": {
+    "title": "More...",
+    "subtitle": "I'll show you some of my hobbies, my favorite things, my stories here."
+  }
+}

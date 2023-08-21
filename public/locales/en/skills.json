@@ -1,0 +1,114 @@
+{
+  "Ruby": {
+    "title": "Ruby",
+    "description": "Currently using Ruby on Rails for backend development"
+  },
+  "TypeScript": {
+    "title": "Typescript",
+    "description": "While working on my graduation thesis project"
+  },
+  "JavaScript": {
+    "title": "Javascript",
+    "description": "My first programming language when I started learning web development"
+  },
+  "C/C++": {
+    "title": "C/C++",
+    "description": "I used C/C++ in my first/second year at university"
+  },
+  "Python": {
+    "title": "Python",
+    "description": "When I started learning Principles of Programming Languages"
+  },
+  "HTML": {
+    "title": "HTML",
+    "description": "I use HTML a lot"
+  },
+  "CSS/SCSS": {
+    "title": "CSS/SCSS",
+    "description": "As a web developer, I use CSS/SCSS a lot"
+  },
+  "Go": {
+    "title": "Go",
+    "description": "I'm currently learning Go"
+  },
+  "Ruby on Rails": {
+    "title": "Ruby on Rails",
+    "description": "My main backend framework"
+  },
+  "React": {
+    "title": "React",
+    "description": "My main frontend framework"
+  },
+  "Redux/Redux Toolkit": {
+    "title": "Redux/Redux Toolkit",
+    "description": "I use Redux to manage state in my React projects"
+  },
+  "Bootstrap": {
+    "title": "Bootstrap",
+    "description": "I have used Bootstrap in some of my projects"
+  },
+  "Ant Design": {
+    "title": "Ant Design",
+    "description": "Main UI library for my Graduation Thesis Project"
+  },
+  "Material UI": {
+    "title": "Material UI",
+    "description": "Main UI library for this Portfolio"
+  },
+  "Docker": {
+    "title": "Docker",
+    "description": "I use Docker for my work"
+  },
+  "MySQL": {
+    "title": "MySQL",
+    "description": "I use MySQL for my work"
+  },
+  "Git": {
+    "title": "Git",
+    "description": "It's a must-have for every developer"
+  },
+  "Vim/NeoVim": {
+    "title": "Vim/NeoVim",
+    "description": "I moved from VSCode to Vim/Neovim for my work"
+  },
+  "Shell/Bash": {
+    "title": "Shell/Bash",
+    "description": "I use zsh with oh-my-zsh"
+  },
+  "LaTeX": {
+    "title": "LaTeX",
+    "description": "I use LaTeX to write documents"
+  },
+  "Teamwork": {
+    "title": "Teamwork",
+    "description": "Teamwork"
+  },
+  "Time management": {
+    "title": "Time management",
+    "description": "Time management"
+  },
+  "Problem solving": {
+    "title": "Problem solving",
+    "description": "Problem solving"
+  },
+  "Adaptability": {
+    "title": "Adaptability",
+    "description": "Adaptability"
+  },
+  "Self-study": {
+    "title": "Self-study",
+    "description": "Self-study"
+  },
+  "Presentation": {
+    "title": "Presentation",
+    "description": "Presentation"
+  },
+  "English": {
+    "title": "English",
+    "description": "English"
+  },
+  "Sports": {
+    "title": "Can play a lot of sports",
+    "description": "Can play a lot of sports"
+  }
+}

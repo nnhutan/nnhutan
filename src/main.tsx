@@ -1,11 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import App from "./App";
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, LinearProgress } from "@mui/material";
 import "@fontsource-variable/jetbrains-mono";
 import "./index.scss";
+import "./i18n";
 import {
   Experimental_CssVarsProvider as CssVarsProvider,
   experimental_extendTheme as extendTheme,
@@ -74,7 +75,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Provider store={store}>
       <CssVarsProvider theme={theme}>
         <CssBaseline />
-        <App />
+        <Suspense fallback={<LinearProgress color="secondary" />}>
+          <App />
+        </Suspense>
       </CssVarsProvider>
     </Provider>
   </React.StrictMode>,

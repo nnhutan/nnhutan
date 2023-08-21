@@ -1,4 +1,11 @@
-import { AppBar, useColorScheme, useScrollTrigger } from "@mui/material";
+import {
+  AppBar,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  useColorScheme,
+  useScrollTrigger,
+} from "@mui/material";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -15,21 +22,26 @@ import { useEffect, useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { selectTheme, setTheme } from "../features/themeSlice";
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
+import EN from "../en.png";
+import VI from "../vi.png";
 
 interface Props {
   handleScroll: (item: string) => void;
 }
 
 const navItems = [
-  "About",
-  "Projects",
-  "Resume",
-  "Skills",
-  "Experiences",
-  "More",
+  "about",
+  "projects",
+  "resume",
+  "skills",
+  "experiences",
+  "more",
 ];
 
 const Header: React.FC<Props> = (props) => {
+  const { t } = useTranslation("core");
   const { setMode } = useColorScheme();
   const theme = useAppSelector(selectTheme);
   const { handleScroll } = props;
@@ -37,6 +49,10 @@ const Header: React.FC<Props> = (props) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
   });
+
+  const handleChangeLanguage = (event: SelectChangeEvent) => {
+    i18n.changeLanguage(event.target.value);
+  };
 
   const dispatch = useAppDispatch();
 
@@ -76,7 +92,7 @@ const Header: React.FC<Props> = (props) => {
         sx={{ my: 2, cursor: "pointer" }}
         onClick={() => scrollTo("Infor")}
       >
-        {"<Dinh Nhu Tan />"}
+        {`<${t("author")} />`}
       </Typography>
       <Divider />
       <List>
@@ -87,17 +103,52 @@ const Header: React.FC<Props> = (props) => {
             onClick={() => scrollTo(item)}
           >
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={t(`header.${item}`)} />
             </ListItemButton>
           </ListItem>
         ))}
-
-        <ThemeSwitch
-          sx={{ m: 1 }}
-          checked={theme === "dark"}
-          onChange={handleChangeTheme}
-          inputProps={{ "aria-label": "theme switch" }}
-        />
+        <ListItem sx={{ justifyContent: "center" }}>
+          <ThemeSwitch
+            sx={{ m: 1 }}
+            checked={theme === "dark"}
+            onChange={handleChangeTheme}
+            inputProps={{ "aria-label": "theme switch" }}
+          />
+        </ListItem>
+        <ListItem sx={{ justifyContent: "center" }}>
+          <Select
+            label="Language"
+            onChange={handleChangeLanguage}
+            defaultValue={i18n.language}
+            sx={{
+              padding: 0,
+              ["& .MuiSelect-select"]: {
+                padding: 0,
+              },
+            }}
+            size="small"
+            variant="standard"
+          >
+            <MenuItem value="en">
+              <img
+                src={EN}
+                width={24}
+                height={24}
+                alt="EN"
+                style={{ margin: "-6px auto -6px" }}
+              />
+            </MenuItem>
+            <MenuItem value="vi">
+              <img
+                src={VI}
+                width={24}
+                height={24}
+                alt="VI"
+                style={{ margin: "-6px auto -6px" }}
+              />
+            </MenuItem>
+          </Select>
+        </ListItem>
       </List>
     </Box>
   );
@@ -129,7 +180,7 @@ const Header: React.FC<Props> = (props) => {
             }}
             onClick={() => scrollTo("Infor")}
           >
-            {"<Dinh Nhu Tan />"}
+            {`<${t("author")} />`}
           </Typography>
           <IconButton
             // color="inherit"
@@ -148,7 +199,7 @@ const Header: React.FC<Props> = (props) => {
                 onClick={() => scrollTo(item)}
                 href={item === "Resume" ? "" : `#${item.toLowerCase()}`}
               >
-                {item}
+                {t(`header.${item}`)}
               </Button>
             ))}
             <ThemeSwitch
@@ -157,6 +208,38 @@ const Header: React.FC<Props> = (props) => {
               onChange={handleChangeTheme}
               inputProps={{ "aria-label": "theme switch" }}
             />
+            <Select
+              label="Language"
+              onChange={handleChangeLanguage}
+              defaultValue={i18n.language}
+              sx={{
+                padding: 0,
+                ["& .MuiSelect-select"]: {
+                  padding: 0,
+                },
+              }}
+              size="small"
+              variant="standard"
+            >
+              <MenuItem value="en">
+                <img
+                  src={EN}
+                  width={24}
+                  height={24}
+                  alt="EN"
+                  style={{ margin: "-6px auto -6px" }}
+                />
+              </MenuItem>
+              <MenuItem value="vi">
+                <img
+                  src={VI}
+                  width={24}
+                  height={24}
+                  alt="VI"
+                  style={{ margin: "-6px auto -6px" }}
+                />
+              </MenuItem>
+            </Select>
           </Box>
         </Toolbar>
       </AppBar>

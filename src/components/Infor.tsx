@@ -7,6 +7,7 @@ import {
 } from "@mui/icons-material";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { forwardRef } from "react";
+import { useTranslation } from "react-i18next";
 import Typed from "react-typed";
 
 interface InforProps {
@@ -16,6 +17,7 @@ interface InforProps {
 
 const Infor = forwardRef<HTMLDivElement, InforProps>(
   ({ handleScroll }, ref) => {
+    const { t } = useTranslation("core");
     return (
       <Stack
         className="min-vh-100"
@@ -31,7 +33,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
           }}
           marginBottom={2}
         >
-          Dinh Nhu Tan
+          {t("author")}
         </Typography>
         <Typography
           variant="body1"
@@ -40,7 +42,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
             color: "#f8f9fa",
           }}
         >
-          Software Engineer
+          {t("info.job")}
         </Typography>
         <Typography
           fontSize={24}
@@ -52,7 +54,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
         >
           <Typed
             strings={[
-              "Code... where logic becomes magic!",
+              t("info.slogan"),
             ]}
             typeSpeed={80}
           />
@@ -117,7 +119,7 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
               onClick={() => handleScroll("About")}
               href="#about"
             >
-              More about me
+              {t("info.button")}
             </Button>
           </Box>
         </div>

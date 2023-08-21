@@ -17,12 +17,14 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import { School } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 interface ExperienceProps {
   ref: React.RefObject<HTMLDivElement>;
 }
 
 const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
+  const { t } = useTranslation(["core", "experiences"]);
   return (
     <Box
       className="min-vh-100"
@@ -39,7 +41,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
         sx={{ color: "#f8f9fa" }}
         marginBottom={2}
       >
-        Experiences
+        {t("experiences.title")}
       </Typography>
       <Hidden smUp>
         <Stack sx={{ width: "100%" }} direction="column" spacing={2}>
@@ -120,7 +122,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
               variant="body2"
               color="text.secondary"
             >
-              2022 -- Current
+              {t("lixibox.time", { ns: "experiences" })}
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector sx={{ bgcolor: "primary.main" }} />
@@ -138,13 +140,13 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                 }}
               >
                 <Typography variant="h6" component="span">
-                  Work at Lixibox
+                  {t("lixibox.title", { ns: "experiences" })}
                 </Typography>
-                <Typography>Backend developer</Typography>
                 <Typography>
-                  I'm working on projects the are related to the e-commerce
-                  field. Building RESTful APIs, microservices, and other
-                  backend-related
+                  {t("lixibox.position", { ns: "experiences" })}
+                </Typography>
+                <Typography>
+                  {t("lixibox.description", { ns: "experiences" })}
                 </Typography>
               </Paper>
             </TimelineContent>
@@ -155,7 +157,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
               variant="body2"
               color="text.secondary"
             >
-              2019 -- 2023
+              {t("hcmut.time", { ns: "experiences" })}
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
@@ -173,33 +175,37 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                 }}
               >
                 <Typography variant="h6" component="span">
-                  Study at Ho Chi Minh University of Technology
+                  {t("hcmut.title", { ns: "experiences" })}
                 </Typography>
-                <Typography>Computer Science - Software Engineering</Typography>
-                <Typography gutterBottom>GPA: 3.4/4 -- TOEIC: 800</Typography>
+                <Typography>
+                  {t("hcmut.major", { ns: "experiences" })}
+                </Typography>
+                <Typography gutterBottom>
+                  {t("hcmut.score", { ns: "experiences" })}
+                </Typography>
                 <Divider />
                 <Typography
                   fontWeight={500}
                   color="text.secondary"
                   marginTop={1}
                 >
-                  Top favorite subjects
+                  {t("hcmut.top_subject", { ns: "experiences" })}
                 </Typography>
                 <Stack>
                   <Typography>
-                    Principle of Programming Language
+                    {t("hcmut.ppl", { ns: "experiences" })}
                   </Typography>
                   <Typography>
-                    Data Structure and Algorithms
+                    {t("hcmut.algo", { ns: "experiences" })}
                   </Typography>
                   <Typography>
-                    Software Architecture
+                    {t("hcmut.sa", { ns: "experiences" })}
                   </Typography>
                   <Typography>
-                    Computer Networking
+                    {t("hcmut.se", { ns: "experiences" })}
                   </Typography>
                   <Typography>
-                    Software Engineering
+                    {t("hcmut.cn", { ns: "experiences" })}
                   </Typography>
                 </Stack>
               </Paper>

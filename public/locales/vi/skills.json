@@ -1,0 +1,114 @@
+{
+  "Ruby": {
+    "title": "Ruby",
+    "description": "Hiện đang sử dụng Ruby on Rails cho phát triển phía backend"
+  },
+  "TypeScript": {
+    "title": "TypeScript",
+    "description": "Trong quá trình làm đề tài luận văn tốt nghiệp"
+  },
+  "JavaScript": {
+    "title": "JavaScript",
+    "description": "Ngôn ngữ lập trình đầu tiên khi tôi bắt đầu học phát triển web"
+  },
+  "C/C++": {
+    "title": "C/C++",
+    "description": "Tôi đã sử dụng C/C++ trong năm thứ nhất và thứ hai ở trường đại học"
+  },
+  "Python": {
+    "title": "Python",
+    "description": "Khi tôi bắt đầu học môn Nguyên tắc Ngôn ngữ Lập trình"
+  },
+  "HTML": {
+    "title": "HTML",
+    "description": "Tôi sử dụng HTML rất nhiều"
+  },
+  "CSS/SCSS": {
+    "title": "CSS/SCSS",
+    "description": "Là một nhà phát triển web, tôi sử dụng CSS/SCSS rất nhiều"
+  },
+  "Go": {
+    "title": "Go",
+    "description": "Hiện tại, tôi đang học Go"
+  },
+  "Ruby on Rails": {
+    "title": "Ruby on Rails",
+    "description": "Framework backend chính của tôi"
+  },
+  "React": {
+    "title": "React",
+    "description": "Framework frontend chính của tôi"
+  },
+  "Redux/Redux Toolkit": {
+    "title": "Redux/Redux Toolkit",
+    "description": "Tôi sử dụng Redux để quản lý trạng thái trong các dự án React của mình"
+  },
+  "Bootstrap": {
+    "title": "Bootstrap",
+    "description": "Tôi đã sử dụng Bootstrap trong một số dự án của mình"
+  },
+  "Ant Design": {
+    "title": "Ant Design",
+    "description": "Thư viện giao diện chính cho Đồ án luận văn tốt nghiệp của tôi"
+  },
+  "Material UI": {
+    "title": "Material UI",
+    "description": "Thư viện giao diện chính cho Trang cá nhân này"
+  },
+  "Docker": {
+    "title": "Docker",
+    "description": "Tôi sử dụng Docker cho công việc của mình"
+  },
+  "MySQL": {
+    "title": "MySQL",
+    "description": "Tôi sử dụng MySQL cho công việc của mình"
+  },
+  "Git": {
+    "title": "Git",
+    "description": "Điều bắt buộc phải có đối với mọi nhà phát triển"
+  },
+  "Vim/NeoVim": {
+    "title": "Vim/NeoVim",
+    "description": "Tôi đã chuyển từ VSCode sang Vim/Neovim cho công việc của mình"
+  },
+  "Shell/Bash": {
+    "title": "Shell/Bash",
+    "description": "Tôi sử dụng zsh với oh-my-zsh"
+  },
+  "LaTeX": {
+    "title": "LaTeX",
+    "description": "Tôi sử dụng LaTeX để viết tài liệu"
+  },
+  "Teamwork": {
+    "title": "Làm việc nhóm",
+    "description": "Làm việc nhóm"
+  },
+  "Time management": {
+    "title": "Quản lý thời gian",
+    "description": "Quản lý thời gian"
+  },
+  "Problem solving": {
+    "title": "Giải quyết vấn đề",
+    "description": "Giải quyết vấn đề"
+  },
+  "Adaptability": {
+    "title": "Khả năng thích nghi",
+    "description": "Khả năng thích nghi"
+  },
+  "Self-study": {
+    "title": "Tự học",
+    "description": "Tự học"
+  },
+  "Presentation": {
+    "title": "Thuyết trình",
+    "description": "Thuyết trình"
+  },
+  "English": {
+    "title": "Tiếng Anh",
+    "description": "Tiếng Anh"
+  },
+  "Sports": {
+    "title": "Nhiều môn thể thao",
+    "description": "Có thể chơi rất nhiều môn thể thao"
+  }
+}

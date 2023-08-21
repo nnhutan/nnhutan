@@ -16,6 +16,7 @@ import {
 } from "../api/reposApi";
 import { useEffect, useState } from "react";
 import { GitHub } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 interface ReposCardProps {
   repo: Repos;
@@ -27,6 +28,7 @@ interface Language {
 }
 
 const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
+  const { t } = useTranslation("core");
   const [languages, setLanguages] = useState<Language[]>([]);
   const { data, isLoading } = useGetReposLanguagesQuery(repo.name, {
     skip: repo.owner.login !== "nnhutan",
@@ -72,7 +74,7 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
           <Divider />
           <Stack direction="row" flexWrap="wrap" gap={1} marginTop={1}>
             <Typography color="text.secondary">
-              Languages:
+              {t("projects.languages")}:
             </Typography>
             {isLoading
               ? (
@@ -111,14 +113,15 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
             href={repo.html_url}
             target="_blank"
           >
-            Repository
+            {t("projects.repository")}
           </Button>
           <Typography
             color="text.secondary"
             sx={{ marginLeft: "auto" }}
             variant="caption"
           >
-            Updated on {new Date(repo.updated_at).toLocaleDateString()}
+            {t("projects.update")}{" "}
+            {new Date(repo.updated_at).toLocaleDateString()}
           </Typography>
         </Box>
       </Paper>
