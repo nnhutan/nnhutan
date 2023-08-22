@@ -3,6 +3,9 @@ import {
   Chip,
   Divider,
   Hidden,
+  List,
+  ListItem,
+  ListItemIcon,
   Paper,
   Stack,
   Typography,
@@ -16,7 +19,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import { School } from "@mui/icons-material";
+import { ControlCamera, School } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 
 interface ExperienceProps {
@@ -46,7 +49,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
       <Hidden smUp>
         <Stack sx={{ width: "100%" }} direction="column" spacing={2}>
           <Chip
-            label="2022 -- Current"
+            label={t("lixibox.time", { ns: "experiences" })}
             color="primary"
             icon={<LaptopMacIcon />}
           />
@@ -58,16 +61,17 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
             }}
           >
             <Typography variant="h6" component="span">
-              Work at Lixibox
+              {t("lixibox.title", { ns: "experiences" })}
             </Typography>
-            <Typography>Backend developer</Typography>
+            <Typography>
+              {t("lixibox.position", { ns: "experiences" })}
+            </Typography>
             <Typography fontSize={14} color="text.secondary">
-              I'm working on projects the are related to the e-commerce field.
-              Building RESTful APIs, microservices, and other backend-related
+              {t("lixibox.description", { ns: "experiences" })}
             </Typography>
           </Paper>
           <Chip
-            label="2022 -- 2023"
+            label={t("hcmut.time", { ns: "experiences" })}
             color="secondary"
             icon={<School />}
           />
@@ -79,41 +83,70 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
             }}
           >
             <Typography variant="h6" component="span">
-              Study at Ho Chi Minh University of Technology
+              {t("hcmut.title", { ns: "experiences" })}
             </Typography>
-            <Typography>Computer Science - Software Engineering</Typography>
-            <Typography gutterBottom>GPA: 3.4/4 -- TOEIC: 800</Typography>
+            <Typography>
+              {t("hcmut.major", { ns: "experiences" })}
+            </Typography>
+            <Typography gutterBottom>
+              {t("hcmut.score", { ns: "experiences" })}
+            </Typography>
             <Divider />
             <Typography
               fontWeight={500}
               color="text.secondary"
               marginTop={1}
             >
-              Top favorite subjects
+              {t("hcmut.top_subject", { ns: "experiences" })}
             </Typography>
-            <Stack>
-              <Typography>
-                Principle of Programming Language
-              </Typography>
-              <Typography>
-                Data Structure and Algorithms
-              </Typography>
-              <Typography>
-                Software Architecture
-              </Typography>
-              <Typography>
-                Computer Networking
-              </Typography>
-              <Typography>
-                Software Engineering
-              </Typography>
-            </Stack>
+            <List>
+              <ListItem>
+                <ListItemIcon>
+                  <ControlCamera />
+                </ListItemIcon>
+                <Typography>
+                  {t("hcmut.ppl", { ns: "experiences" })}
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <ControlCamera />
+                </ListItemIcon>
+                <Typography>
+                  {t("hcmut.algo", { ns: "experiences" })}
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <ControlCamera />
+                </ListItemIcon>
+                <Typography>
+                  {t("hcmut.sa", { ns: "experiences" })}
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <ControlCamera />
+                </ListItemIcon>
+                <Typography>
+                  {t("hcmut.se", { ns: "experiences" })}
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <ControlCamera />
+                </ListItemIcon>
+                <Typography>
+                  {t("hcmut.cn", { ns: "experiences" })}
+                </Typography>
+              </ListItem>
+            </List>
           </Paper>
         </Stack>
       </Hidden>
       <Hidden only="xs">
         <Timeline
-          position="alternate"
+          position="alternate-reverse"
           sx={{ width: "100%", flexGrow: 0, py: 4 }}
         >
           <TimelineItem>
@@ -191,23 +224,48 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                 >
                   {t("hcmut.top_subject", { ns: "experiences" })}
                 </Typography>
-                <Stack>
-                  <Typography>
-                    {t("hcmut.ppl", { ns: "experiences" })}
-                  </Typography>
-                  <Typography>
-                    {t("hcmut.algo", { ns: "experiences" })}
-                  </Typography>
-                  <Typography>
-                    {t("hcmut.sa", { ns: "experiences" })}
-                  </Typography>
-                  <Typography>
-                    {t("hcmut.se", { ns: "experiences" })}
-                  </Typography>
-                  <Typography>
-                    {t("hcmut.cn", { ns: "experiences" })}
-                  </Typography>
-                </Stack>
+                <List>
+                  <ListItem>
+                    <ListItemIcon>
+                      <ControlCamera />
+                    </ListItemIcon>
+                    <Typography>
+                      {t("hcmut.ppl", { ns: "experiences" })}
+                    </Typography>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <ControlCamera />
+                    </ListItemIcon>
+                    <Typography>
+                      {t("hcmut.algo", { ns: "experiences" })}
+                    </Typography>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <ControlCamera />
+                    </ListItemIcon>
+                    <Typography>
+                      {t("hcmut.sa", { ns: "experiences" })}
+                    </Typography>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <ControlCamera />
+                    </ListItemIcon>
+                    <Typography>
+                      {t("hcmut.se", { ns: "experiences" })}
+                    </Typography>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <ControlCamera />
+                    </ListItemIcon>
+                    <Typography>
+                      {t("hcmut.cn", { ns: "experiences" })}
+                    </Typography>
+                  </ListItem>
+                </List>
               </Paper>
             </TimelineContent>
           </TimelineItem>

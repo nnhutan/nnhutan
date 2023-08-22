@@ -34,7 +34,7 @@ import {
   Translate,
 } from "@mui/icons-material";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 interface SkillProps {
   ref: React.RefObject<HTMLDivElement>;

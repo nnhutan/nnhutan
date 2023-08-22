@@ -6,7 +6,7 @@ import {
   Twitter,
 } from "@mui/icons-material";
 import { Box, Button, Stack, Typography } from "@mui/material";
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Typed from "react-typed";
 
@@ -18,6 +18,14 @@ interface InforProps {
 const Infor = forwardRef<HTMLDivElement, InforProps>(
   ({ handleScroll }, ref) => {
     const { t } = useTranslation("core");
+    const sloganRef = useRef(null);
+
+    useEffect(() => {
+      if (sloganRef.current) {
+        const current = sloganRef.current as any;
+        current.typed.reset();
+      }
+    }, [t]);
     return (
       <Stack
         className="min-vh-100"
@@ -53,10 +61,9 @@ const Infor = forwardRef<HTMLDivElement, InforProps>(
           }}
         >
           <Typed
-            strings={[
-              t("info.slogan"),
-            ]}
+            strings={[t("info.slogan")]}
             typeSpeed={80}
+            ref={sloganRef}
           />
         </Typography>
         <Stack

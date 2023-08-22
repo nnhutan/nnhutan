@@ -25,6 +25,14 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
   const helloRef = useRef<HTMLDivElement>(null);
   const inViewport = useIsInViewport(helloRef);
   const { t } = useTranslation("core");
+  const subtitleRef = useRef(null);
+
+  useEffect(() => {
+    if (show && subtitleRef.current) {
+      const current = subtitleRef.current as any;
+      current.typed.reset();
+    }
+  }, [t]);
 
   useEffect(() => {
     if (show) return;
@@ -105,6 +113,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((_, ref) => {
                         } <span style="font-weight: 600;">${t("info.firstname")
                         }!</span>`,
                       ]}
+                      ref={subtitleRef}
                     />
                   )
                   : (

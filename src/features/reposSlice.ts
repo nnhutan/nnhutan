@@ -13,8 +13,6 @@ export const reposSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {},
-  extraReducers: (builder) => {
-  },
 });
 
 export const selectReposList = (state: RootState) => state.repos;

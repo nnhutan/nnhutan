@@ -25,6 +25,14 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
   const helloRef = useRef<HTMLDivElement>(null);
   const inViewport = useIsInViewport(helloRef);
   const { t } = useTranslation(["core", "more"]);
+  const subtitleRef = useRef(null);
+
+  useEffect(() => {
+    if (show && subtitleRef.current) {
+      const current = subtitleRef.current as any;
+      current.typed.reset();
+    }
+  }, [t]);
 
   useEffect(() => {
     if (show) return;
@@ -65,6 +73,7 @@ const More = forwardRef<HTMLDivElement, MoreProps>((_, ref) => {
               strings={[
                 t("more.subtitle"),
               ]}
+              ref={subtitleRef}
             />
           )
           : (

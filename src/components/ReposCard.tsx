@@ -112,6 +112,7 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
             color="inherit"
             href={repo.html_url}
             target="_blank"
+            sx={{ minWidth: "fit-content" }}
           >
             {t("projects.repository")}
           </Button>
@@ -119,6 +120,7 @@ const ReposCard: React.FC<ReposCardProps> = ({ repo }) => {
             color="text.secondary"
             sx={{ marginLeft: "auto" }}
             variant="caption"
+            textAlign="right"
           >
             {t("projects.update")}{" "}
             {new Date(repo.updated_at).toLocaleDateString()}

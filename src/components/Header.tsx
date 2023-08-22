@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  useColorScheme,
-  useScrollTrigger,
-} from "@mui/material";
+import { AppBar, useColorScheme, useScrollTrigger } from "@mui/material";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -23,9 +16,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { selectTheme, setTheme } from "../features/themeSlice";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
-import EN from "../en.png";
-import VI from "../vi.png";
+import SelectLanguage from "./SelectLanguage";
 
 interface Props {
   handleScroll: (item: string) => void;
@@ -49,10 +40,6 @@ const Header: React.FC<Props> = (props) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
   });
-
-  const handleChangeLanguage = (event: SelectChangeEvent) => {
-    i18n.changeLanguage(event.target.value);
-  };
 
   const dispatch = useAppDispatch();
 
@@ -116,38 +103,7 @@ const Header: React.FC<Props> = (props) => {
           />
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>
-          <Select
-            label="Language"
-            onChange={handleChangeLanguage}
-            defaultValue={i18n.language}
-            sx={{
-              padding: 0,
-              ["& .MuiSelect-select"]: {
-                padding: 0,
-              },
-            }}
-            size="small"
-            variant="standard"
-          >
-            <MenuItem value="en">
-              <img
-                src={EN}
-                width={24}
-                height={24}
-                alt="EN"
-                style={{ margin: "-6px auto -6px" }}
-              />
-            </MenuItem>
-            <MenuItem value="vi">
-              <img
-                src={VI}
-                width={24}
-                height={24}
-                alt="VI"
-                style={{ margin: "-6px auto -6px" }}
-              />
-            </MenuItem>
-          </Select>
+          <SelectLanguage />
         </ListItem>
       </List>
     </Box>
@@ -208,38 +164,7 @@ const Header: React.FC<Props> = (props) => {
               onChange={handleChangeTheme}
               inputProps={{ "aria-label": "theme switch" }}
             />
-            <Select
-              label="Language"
-              onChange={handleChangeLanguage}
-              defaultValue={i18n.language}
-              sx={{
-                padding: 0,
-                ["& .MuiSelect-select"]: {
-                  padding: 0,
-                },
-              }}
-              size="small"
-              variant="standard"
-            >
-              <MenuItem value="en">
-                <img
-                  src={EN}
-                  width={24}
-                  height={24}
-                  alt="EN"
-                  style={{ margin: "-6px auto -6px" }}
-                />
-              </MenuItem>
-              <MenuItem value="vi">
-                <img
-                  src={VI}
-                  width={24}
-                  height={24}
-                  alt="VI"
-                  style={{ margin: "-6px auto -6px" }}
-                />
-              </MenuItem>
-            </Select>
+            <SelectLanguage />
           </Box>
         </Toolbar>
       </AppBar>
