@@ -30,6 +30,7 @@
     "i18next-localstorage-backend": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^1.3.0",
     "react-i18next": "^13.1.2",
     "react-lazy-load-image-component": "^1.6.0",
     "react-particles": "^2.12.2",
