@@ -34,7 +34,6 @@ i18n
       "more",
       "skills",
     ],
-    debug: true,
 
     interpolation: {
       escapeValue: false,
