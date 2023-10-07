@@ -28,7 +28,6 @@ const navItems = [
   "resume",
   "skills",
   "experiences",
-  "more",
 ];
 
 const Header: React.FC<Props> = (props) => {

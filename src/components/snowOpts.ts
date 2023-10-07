@@ -2,7 +2,7 @@ import type { ISourceOptions } from "tsparticles-engine";
 
 const snowOpts: ISourceOptions = {
   name: "Snow",
-  fpsLimit: 120,
+  fpsLimit: 60,
   particles: {
     number: {
       value: 800,

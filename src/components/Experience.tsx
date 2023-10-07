@@ -66,9 +66,10 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
             <Typography>
               {t("lixibox.position", { ns: "experiences" })}
             </Typography>
+            {/* <Divider/>
             <Typography fontSize={14} color="text.secondary">
               {t("lixibox.description", { ns: "experiences" })}
-            </Typography>
+            </Typography> */}
           </Paper>
           <Chip
             label={t("hcmut.time", { ns: "experiences" })}
@@ -91,8 +92,8 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
             <Typography gutterBottom>
               {t("hcmut.score", { ns: "experiences" })}
             </Typography>
-            <Divider />
-            <Typography
+            {/* <Divider /> */}
+            {/* <Typography
               fontWeight={500}
               color="text.secondary"
               marginTop={1}
@@ -140,7 +141,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                   {t("hcmut.cn", { ns: "experiences" })}
                 </Typography>
               </ListItem>
-            </List>
+            </List> */}
           </Paper>
         </Stack>
       </Hidden>
@@ -175,12 +176,13 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                 <Typography variant="h6" component="span">
                   {t("lixibox.title", { ns: "experiences" })}
                 </Typography>
-                <Typography>
+                <Typography gutterBottom>
                   {t("lixibox.position", { ns: "experiences" })}
                 </Typography>
+                {/* <Divider/>
                 <Typography>
                   {t("lixibox.description", { ns: "experiences" })}
-                </Typography>
+                </Typography> */}
               </Paper>
             </TimelineContent>
           </TimelineItem>
@@ -216,7 +218,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                 <Typography gutterBottom>
                   {t("hcmut.score", { ns: "experiences" })}
                 </Typography>
-                <Divider />
+                {/* <Divider />
                 <Typography
                   fontWeight={500}
                   color="text.secondary"
@@ -265,7 +267,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((_, ref) => {
                       {t("hcmut.cn", { ns: "experiences" })}
                     </Typography>
                   </ListItem>
-                </List>
+                </List> */}
               </Paper>
             </TimelineContent>
           </TimelineItem>

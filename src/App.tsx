@@ -124,9 +124,9 @@ function App() {
           <Suspense fallback={<LinearProgress color="secondary" />}>
             <Experience ref={experienceRef} />
           </Suspense>
-          <Suspense fallback={<LinearProgress color="secondary" />}>
+          {/* <Suspense fallback={<LinearProgress color="secondary" />}>
             <More ref={moreRef} />
-          </Suspense>
+          </Suspense> */}
         </Container>
         <ScrollTop>
           <Fab size="small" aria-label="scroll back to top">
