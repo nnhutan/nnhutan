@@ -2,7 +2,7 @@
 <h1 align="center">Hi 👋, I'm Tan</h1>
 
 - 👨‍💻 My portfolio
-  [https://dinhnhutan.me/](https://dinhnhutan.info/)
+  [https://dinhnhutan.info/](https://dinhnhutan.info/)
 
 - 📫 How to reach me **nhutan2001@gmail.com**
 <h3 align="left">Connect with me:</h3>
