@@ -3,8 +3,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu"
-import { Button } from '../ui/button'
+} from "@/components/ui/dropdown-menu"
+import { Button } from '@/components/ui/button'
 import { Languages } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { fetchData } from '../../features/dataSlice'

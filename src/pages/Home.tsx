@@ -1,10 +1,10 @@
 import { Facebook, Github, Linkedin } from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
-import { Separator } from '../components/ui/separator'
-import { Badge } from '../components/ui/badge'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Separator } from '@/components/ui/separator'
+import { Badge } from '@/components/ui/badge'
 import StackIcon from "tech-stack-icons";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../components/ui/tooltip'
-import ExperienceCard from '../components/custom/ExperienceCard'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import ExperienceCard from '@/components/custom/ExperienceCard'
 import { buttonVariants } from "@/components/ui/button"
 import { useTranslation } from 'react-i18next';
 import { selectData } from '../features/dataSlice';

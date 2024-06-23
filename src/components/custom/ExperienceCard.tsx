@@ -1,7 +1,7 @@
 import { Experience } from '../../types/experience';
-import { useTheme } from '../theme-provider';
-import { Badge } from '../ui/badge';
-import { Card, CardContent } from '../ui/card';
+import { useTheme } from '@/components/theme-provider';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 
 const ExperienceCard = ({ company, logo, role, description, duration }: Experience) => {
   const { theme } = useTheme();

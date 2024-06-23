@@ -3,18 +3,18 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "../ui/navigation-menu"
-import ToggleThemeButton from './ToggleThemeButton'
-import LocalizationButton from './LocalizationButton'
-import { navigationMenuTriggerStyle } from '../ui/navigation-menu'
+} from "@/components/ui/navigation-menu"
+import ToggleThemeButton from '@/components/custom/ToggleThemeButton'
+import LocalizationButton from '@/components/custom/LocalizationButton'
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerHeader,
   DrawerTrigger,
-} from "../ui/drawer"
-import { Button } from '../ui/button'
+} from "@/components/ui/drawer"
+import { Button } from '@/components/ui/button'
 import { AlignJustify, X } from 'lucide-react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
