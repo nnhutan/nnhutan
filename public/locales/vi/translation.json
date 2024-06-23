@@ -1,0 +1,38 @@
+{
+  "notfound": {
+    "title": "404 - Không Tìm Thấy!",
+    "description": "Xin lỗi, trang bạn tìm kiếm không tồn tại.",
+    "go_back_home": "Quay lại trang chủ"
+  },
+  "header": {
+    "home": "Trang Chủ",
+    "sharing": "Chia Sẻ",
+    "contact": "Liên Hệ"
+  },
+  "home": {
+    "about_me": {
+      "title": "Về Tôi",
+      "subtitle": "Muốn biết về tôi? Đây là thông tin cho bạn:"
+    },
+    "skills": {
+      "title": "Kỹ Năng",
+      "subtitle": "Tôi có kinh nghiệm với các công nghệ sau"
+    },
+    "experiences": {
+      "title": "Kinh Nghiệm",
+      "subtitle": "Đây là tóm tắt nhanh về những kinh nghiệm gần đây nhất của tôi:"
+    }
+  },
+  "languages": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối"
+  },
+  "not_implemented": {
+    "title": "Xin Lỗi!",
+    "subtitle": "Tính năng này chưa được triển khai. Vui lòng quay lại sau."
+  }
+}

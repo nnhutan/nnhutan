@@ -1,0 +1,81 @@
+{
+  "fullname": "Đinh Như Tân",
+  "slogan": "Kỹ sư phát triển phần mềm fullstack với 2 năm kinh nghiệm trong phát triển web. Tôi đam mê học hỏi và chia sẻ kiến thức của mình với người khác một cách công khai nhất có thể. 🚀",
+  "currentRole": "Kỹ Sư Phát Triển Phần Mềm Fullstack",
+  "moreAboutMe": "Tôi sinh ra và lớn lên ở một ngôi làng nhỏ tại Lệ Thủy, Quảng Bình, Việt Nam. Tôi học tại Đại học Bách Khoa TP.HCM và tốt nghiệp năm 2023 với bằng cử nhân Khoa học Máy tính. Tôi bắt đầu hành trình của mình như là một lập trình viên backend vào năm 2022 và kể từ đó đã chuyển sang phát triển fullstack. Tôi có kinh nghiệm nhiều nhất với Ruby on Rails và React vì tôi đã làm việc với chúng trong một thời gian dài. Tôi luôn cố gắng học hỏi những điều mới và cải thiện kỹ năng của mình mỗi ngày. Hãy liên hệ và nói xin chào với tôi nhé!",
+  "socialUrls": {
+    "github": "https://github.com/nnhutan",
+    "facebook": "https://www.facebook.com/dinhnhutan",
+    "linkedin": "https://www.linkedin.com/in/dinhnhutan"
+  },
+  "skills": [
+    {
+      "name": "Ruby",
+      "icon": "ruby"
+    },
+    {
+      "name": "Typescript",
+      "icon": "typescript"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql"
+    },
+    {
+      "name": "Shell/Bash",
+      "icon": "bash"
+    },
+    {
+      "name": "Neovim",
+      "icon": "neovim"
+    },
+    {
+      "name": "Rails",
+      "icon": "rails"
+    },
+    {
+      "name": "React",
+      "icon": "reactjs"
+    },
+    {
+      "name": "MySQL",
+      "icon": "mysql"
+    },
+    {
+      "name": "Git",
+      "icon": "git"
+    },
+    {
+      "name": "Docker",
+      "icon": "docker"
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Employment Hero",
+      "logo": {
+        "light": "./employment_hero_light.svg",
+        "dark": "./employment_hero_dark.svg"
+      },
+      "role": "Kỹ Sư Phát Triển Phần Mềm Fullstack",
+      "description": [
+        "Employment Hero là nền tảng đám mây hàng đầu của Úc về quản lý nhân sự, trả lương và lợi ích cho nhà tuyển dụng & nhân viên",
+        "Tôi hỗ trợ họ duy trì và phát triển hệ thống sử dụng các công nghệ chủ chốt như Ruby on Rails, Sinatra, React, Redis, Sidekiq, PostgreSQL, GRPC, Kafka..."
+      ],
+      "duration": "Tháng 5 2024 - Hiện tại"
+    },
+    {
+      "company": "Lixibox",
+      "logo": {
+        "light": "./lixibox_light.svg",
+        "dark": "./lixibox_dark.svg"
+      },
+      "role": "Lập Trình Viên Backend",
+      "description": [
+        "Công ty hoạt động trong lĩnh vực Thương mại Điện tử.",
+        "Tôi hỗ trợ họ duy trì và phát triển hệ thống phía backend sử dụng các công nghệ chủ chốt như Ruby on Rails, Redis, Sidekiq, MySQL, ElasticSearch"
+      ],
+      "duration": "Tháng 4 2022 - Tháng 5 2024"
+    }
+  ]
+}

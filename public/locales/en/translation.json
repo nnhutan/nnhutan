@@ -1,0 +1,38 @@
+{
+  "notfound": {
+    "title": "404 - Not Found!",
+    "description": "Sorry, the page you are looking for does not exist.",
+    "go_back_home": "Go back to home"
+  },
+  "header": {
+    "home": "Home",
+    "sharing": "Sharing",
+    "contact": "Contact"
+  },
+  "home": {
+    "about_me": {
+      "title": "About me",
+      "subtitle": "Curious about me? Here you have it:"
+    },
+    "skills": {
+      "title": "Skills",
+      "subtitle": "I have experience with the following technologies"
+    },
+    "experiences": {
+      "title": "Experiences",
+      "subtitle": "Here is a quick summary of my most recent experiences:"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "vi": "Vietnamese"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "not_implemented": {
+    "title": "Sorry!",
+    "subtitle": "This feature is not implemented yet. Please come back later."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "fullname": "Dinh Nhu Tan",
+  "slogan": "A fullstack software developer engineer with 2 years of experience in web development. I have a passion for learning and sharing my knowledge with others as publicly as possible. 🚀",
+  "currentRole": "Fullstack Software Developer Engineer",
+  "moreAboutMe": "I was born and raised in a small village in Le Thuy, Quang Binh, Vietnam. I studied at Ho Chi Minh University of Technology and graduated in 2023 with a bachelor's degree in Computer Science. I began my journey as a backend developer in 2022 and have since transitioned to a full-stack developer. I have experience with Ruby on Rails, React the most because I have been working with them for a long time. I always try to learn new things and improve my skills every day. Feel free to reach out and say hello!",
+  "socialUrls": {
+    "github": "https://github.com/nnhutan",
+    "facebook": "https://www.facebook.com/dinhnhutan",
+    "linkedin": "https://www.linkedin.com/in/dinhnhutan"
+  },
+  "skills": [
+    {
+      "name": "Ruby",
+      "icon": "ruby"
+    },
+    {
+      "name": "Typescript",
+      "icon": "typescript"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql"
+    },
+    {
+      "name": "Shell/Bash",
+      "icon": "bash"
+    },
+    {
+      "name": "Neovim",
+      "icon": "neovim"
+    },
+    {
+      "name": "Rails",
+      "icon": "rails"
+    },
+    {
+      "name": "React",
+      "icon": "reactjs"
+    },
+    {
+      "name": "MySQL",
+      "icon": "mysql"
+    },
+    {
+      "name": "Git",
+      "icon": "git"
+    },
+    {
+      "name": "Docker",
+      "icon": "docker"
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Employment Hero",
+      "logo": {
+        "light": "./employment_hero_light.svg",
+        "dark": "./employment_hero_dark.svg"
+      },
+      "role": "Fullstack Software Developer Engineer",
+      "description": [
+        "Employment Hero is Australia's top cloud-based HR, payroll and benefits platform for employers & employees",
+        "I support them in maintaining and developing systems using key technologies such as Ruby on Rails, Sinatra, React, Redis, Sidekiq, PostgreSQL, GRPC, Kafka..."
+      ],
+      "duration": "May 2024 - Present"
+    },
+    {
+      "company": "Lixibox",
+      "logo": {
+        "light": "./lixibox_light.svg",
+        "dark": "./lixibox_dark.svg"
+      },
+      "role": "Backend Developer",
+      "description": [
+        "The company operates in the field of Ecommerce.",
+        "I support them in maintaining and developing systems on the backend side using key technologies such as Ruby on Rails, Redis, Sidekiq, MySQL, ElasticSearch"
+      ],
+      "duration": "Apr 2022 - May 2024"
+    }
+  ]
+}
