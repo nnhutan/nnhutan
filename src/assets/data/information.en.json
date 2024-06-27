@@ -1,7 +1,7 @@
 {
   "fullname": "Dinh Nhu Tan",
-  "slogan": "A fullstack software developer engineer with 2 years of experience in web development. I have a passion for learning and sharing my knowledge with others as publicly as possible. 🚀",
-  "currentRole": "Fullstack Software Developer Engineer",
+  "slogan": "A fullstack software development engineer with 2 years of experience in web development. I have a passion for learning and sharing my knowledge with others as publicly as possible. 🚀",
+  "currentRole": "Fullstack Software Development Engineer",
   "moreAboutMe": "I was born and raised in a small village in Le Thuy, Quang Binh, Vietnam. I studied at Ho Chi Minh University of Technology and graduated in 2023 with a bachelor's degree in Computer Science. I began my journey as a backend developer in 2022 and have since transitioned to a full-stack developer. I have experience with Ruby on Rails, React the most because I have been working with them for a long time. I always try to learn new things and improve my skills every day. Feel free to reach out and say hello!",
   "socialUrls": {
     "github": "https://github.com/nnhutan",
@@ -57,7 +57,7 @@
         "light": "./employment_hero_light.svg",
         "dark": "./employment_hero_dark.svg"
       },
-      "role": "Fullstack Software Developer Engineer",
+      "role": "Fullstack Software Development Engineer",
       "description": [
         "Employment Hero is Australia's top cloud-based HR, payroll and benefits platform for employers & employees",
         "I support them in maintaining and developing systems using key technologies such as Ruby on Rails, Sinatra, React, Redis, Sidekiq, PostgreSQL, GRPC, Kafka..."
