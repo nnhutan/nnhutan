@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/drawer"
 import { Button } from '@/components/ui/button'
 import { AlignJustify, X } from 'lucide-react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const menuList = [
@@ -25,25 +25,26 @@ const menuList = [
   { localeKey: 'header.contact', path: '/contact' },
 ]
 
-const Link = ({ to, ...props }: { to: string } | React.ComponentProps<typeof NavLink>) => {
+const Link = ({ to, inDrawer, title }: { to: string, title: string, inDrawer?: boolean | undefined }) => {
   const pathname = useLocation().pathname;
   const isActive = to === pathname;
   const menuLinkClassName = `${navigationMenuTriggerStyle()} cursor-pointer bg-transparent`
+  const navigate = useNavigate()
+  const handleNavigate = () => navigate(to)
 
-  return (
-    <NavigationMenuLink asChild active={isActive}>
-      <NavLink to={to} className={menuLinkClassName} {...props} />
-    </NavigationMenuLink>
-  );
+  if (inDrawer)
+    return <DrawerClose><NavigationMenuLink active={isActive} className={menuLinkClassName} onClick={handleNavigate}>{title}</NavigationMenuLink></DrawerClose>
+
+  return <NavigationMenuLink active={isActive} className={menuLinkClassName} onClick={handleNavigate}>{title}</NavigationMenuLink>
 };
 
-const NavigationItemList = (props: React.ComponentProps<typeof NavigationMenuList>) => {
+const NavigationItemList = ({ inDrawer, ...props }: React.ComponentProps<typeof NavigationMenuList> & { inDrawer?: boolean | undefined }) => {
   const { t } = useTranslation()
   return <NavigationMenuList {...props}>
     {
       menuList.map((item, index) => (
         <NavigationMenuItem key={index}>
-          <Link to={item.path}>{t(item.localeKey)}</Link>
+          <Link to={item.path} inDrawer={inDrawer} title={t(item.localeKey)} />
         </NavigationMenuItem>
       ))
     }
@@ -68,7 +69,7 @@ const Header = () => {
               <HeaderLogo />
             </DrawerHeader>
             <NavigationMenu className='items-start'>
-              <NavigationItemList className='flex-col' />
+              <NavigationItemList className='flex-col' inDrawer />
             </NavigationMenu>
           </DrawerContent>
         </Drawer>
