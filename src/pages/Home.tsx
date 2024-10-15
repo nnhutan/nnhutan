@@ -18,7 +18,7 @@ const Home = () => {
   return <main className="container mx-auto py-16 max-w-2xl">
     <div className='flex flex-col gap-3 items-center'>
       <Avatar className='w-16 h-16'>
-        <AvatarImage src='./avatar.svg' />
+        <AvatarImage src='./myself.jpg' alt='nhutan' />
         <AvatarFallback>NT</AvatarFallback>
       </Avatar>
       <span className='text-center'>
