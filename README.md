@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm <a href="https://dinhnhutan.blog/" target="blank">Tan</a></h1>
+<h1 align="center">Hi 👋, I'm <a href="https://dinhnhutan.blog/" target="_blank">Tan</a></h1>
 <h3 align="center">Fullstack Software Development Engineer</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=nnhutan&label=Profile%20views&color=0e75b6&style=flat" alt="nnhutan" /> </p>
@@ -8,21 +8,21 @@
   <img align="right" top="500" height="300" width="400" alt="GIF" src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif">
 </a>
 
-- 🔭 I’m currently working in <a href="https://employmenthero.com/" target="blank">Employment Hero</a>
+- 🔭 I’m currently working in <b><a href="https://employmenthero.com/" target="_blank">Employment Hero</a></b>
 
 - 🌱 I’m currently Working on Web application development
 
 - 🤝 I’m available for freelancing.
 
-- 🌱 I’m currently using [nhutaneh](https://github.com/nhutaneh) Github account for my work at the company.
+- 🌱 I’m currently using **[nhutaneh](https://github.com/nhutaneh)** Github account for my work at the company.
 
-- 📝 I regularly write articles on [dinhnhutan.blog](https://dinhnhutan.blog)
+- 📝 I regularly write articles on **[dinhnhutan.blog](https://dinhnhutan.blog)**
 
 - 💬 Ask me about **Rails & Reactjs**
 
 - 📫 How to reach me **nhutan2001@gmail.com**
 
-- 📄 Know about my experiences <a href="https://dinhnhutan.blog" target="blank">Portfolio</a>
+- 📄 Know about my experiences <b><a href="https://dinhnhutan.blog" target="_blank">Portfolio</a></b>
 <br/>
 <h3 align="center" > <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30" height="30" style="margin-right: 10px;">Connect with me 🤝 </h3>
 
